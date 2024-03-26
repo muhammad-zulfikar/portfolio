@@ -155,7 +155,7 @@ export default {
       if (isHeaderImage) {
         imagePath = require("@/assets/icons/win95/" + imageName);
       } else {
-        imagePath = require("@/assets/images/publications/" + imageName);
+        imagePath = require("@/assets/images/" + imageName);
       }
       return imagePath;
     }

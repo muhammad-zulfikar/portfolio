@@ -297,6 +297,37 @@ export default new Vuex.Store({
         showInNavbar: true,
       },
 
+      // Notepad
+      {
+        windowId: "notepadWindow",
+        windowState: "close",
+        displayName: "Notepad",
+        windowComponent: "window",
+        windowContent: "notepad",
+        windowContentPadding: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0",
+          mobile: {
+            top: "0", // Mobile specific padding
+            right: "0", // Mobile specific padding
+            bottom: "0", // Mobile specific padding
+            left: "0", // Mobile specific padding
+          },
+        },
+        position: "absolute",
+        positionX: "25vw",
+        positionY: "5vh",
+        positionXMobile: "10vw", // Mobile specific position
+        positionYMobile: "10vh", // Mobile specific position
+        iconImage: "notepad.png",
+        altText: "Notepad",
+        fullscreen: false,
+        showInAppGrid: false,
+        showInNavbar: true,
+      },
+
       // Individual Projects //
       {
         windowId: "cs50xWindow",
@@ -528,8 +559,8 @@ export default new Vuex.Store({
         positionXMobile: "2vw", // Mobile specific position
         positionYMobile: "10vh", // Mobile specific position
         iconImage: "search.png",
-        altText: "Landing Page",
-        fullscreen: true,
+        altText: "Explorer",
+        fullscreen: false,
         showInAppGrid: false,
         showInNavbar: true,
       },

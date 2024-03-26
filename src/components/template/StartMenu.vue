@@ -132,6 +132,10 @@
                 <img class="start-menu__submenu-icon" src="@/assets/icons/win95/mail.png" alt="Text File">
                 <span>Mail</span>
               </div>
+              <div class="start-menu__submenu-item" @click="openWindow('notepadWindow')">
+                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/notepad.png" alt="Text File">
+                <span>Notepad</span>
+              </div>
             </div>
           </div>
         </div>

@@ -52,6 +52,8 @@
 
 <script>
 
+import Notepad from "./components/windows/notepad";
+import Explorer from "./components/windows/explorer";
 // Template
 import Navbar from "./components/template/Navbar";
 import AppGrid from "./components/template/AppGrid";
@@ -96,6 +98,8 @@ export default {
   },
 
   components: {
+    Notepad,
+    Explorer,
     // Registering components and windows
     Navbar,
     AppGrid,
