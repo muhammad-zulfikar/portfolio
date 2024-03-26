@@ -99,7 +99,7 @@ export default {
             'Deriving additional features such as pack size and brand name from the data.',
             'Defining metrics of interest to draw insights on who spends on chips and what drives spends for each customer segment.'
           ],
-          iframeSource: 'https://muhammad-zulfikar.github.io/documents/projects/idx%20partners/files/finalproject.html'
+          iframeSource: 'https://muhammad-zulfikar.github.io/files/documents/projects/idx_partners/finalproject.html'
         },
         {
           id: 'task1-subtab2',

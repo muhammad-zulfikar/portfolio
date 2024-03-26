@@ -128,7 +128,7 @@ export default {
         {
           title: "Credit Risk Predictive Model - Data Scientist at ID/X Partners",
           windowId: "idxWindow",
-          iframeSrc: "https://muhammad-zulfikar.github.io/documents/projects/idx%20partners/files/choropleth.html",
+          iframeSrc: "https://muhammad-zulfikar.github.io/files/documents/projects/idx_partners/choropleth.html",
           tags: ["Data Analysis", "Python", "Data Visualization"],
           desc:
             "During my internship at ID/X Partners, I had the chance to work on an exciting final project. I was given datasets of approved and rejected loan applications. My goal was to create a model that could predict if a loan application would be approved or rejected. I used my skills in Python to build this predictive model.",

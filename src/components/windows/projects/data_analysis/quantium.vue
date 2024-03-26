@@ -126,7 +126,7 @@ export default {
                         'Deriving additional features such as pack size and brand name from the data.',
                         'Defining metrics of interest to draw insights on who spends on chips and what drives spends for each customer segment.'
                     ],
-                    iframeSource: 'https://muhammad-zulfikar.github.io/documents/projects/quantium/files/quantium_task1.html'
+                    iframeSource: 'https://muhammad-zulfikar.github.io/files/documents/projects/quantium/quantium_task1.html'
                 }
             ],
             task2s: [
@@ -138,7 +138,7 @@ export default {
                         'Creating a measure to compare different control stores to each of the trial stores.',
                         'Comparing each trial and control pair during the trial period to test if total sales are significantly different in the trial period and if so, check if the driver of change is more purchasing customers or more purchases per customers etc.'
                     ],
-                    iframeSource: 'https://muhammad-zulfikar.github.io/documents/projects/quantium/files/quantium_task2.html'
+                    iframeSource: 'https://muhammad-zulfikar.github.io/files/documents/projects/quantium/quantium_task2.html'
                 }
             ],
             task3s: [
@@ -146,7 +146,7 @@ export default {
                     title: 'Analytics and Commercial Application',
                     desc: 'The goal is to provide actionable insights and recommendations crucial for developing the strategic plan for the next six months. To achieve this, I followed the "Pyramid Principles" framework for report structure to ensure that everything make sense. I use graphs to support key insights and taglines to highlight important findings.',
                     responsibilities: '',
-                    iframeSource: 'https://muhammad-zulfikar.github.io/documents/projects/quantium/files/quantium_task3.pdf'
+                    iframeSource: 'https://muhammad-zulfikar.github.io/files/documents/projects/quantium/quantium_task3.pdf'
                 },
             ],
         };

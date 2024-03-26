@@ -60,7 +60,7 @@ export default {
         },
         {
           title: "Invasi Rusia ke Ukraina pada 2022 dalam Perspektif Hukum Internasional",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/Invasi%20Rusia%20ke%20Ukraina%202022%20dalam%20Perspektif%20Hukum%20Internasional.pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Invasi%20Rusia%20ke%20Ukraina%202022%20dalam%20Perspektif%20Hukum%20Internasional.pdf",
           tags: ["International Law", "Invasion", "Conflict", "Realism"],
           year: '2023',
           abstract:
@@ -68,7 +68,7 @@ export default {
         },
         {
           title: "Peran ASEAN dalam Mengatasi Masalah Human Security Terorisme: Studi Kasus Bom Bali",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/Peran%20ASEAN%20dalam%20Mengatasi%20Masalah%20Human%20Security%20Terorisme%20(Studi%20Kasus%20Bom%20Bali).pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Peran%20ASEAN%20dalam%20Mengatasi%20Masalah%20Human%20Security%20Terorisme%20(Studi%20Kasus%20Bom%20Bali).pdf",
           tags: ["ASEAN", "Human Security", "Institutionalism"],
           year: '2021',
           abstract:
@@ -84,7 +84,7 @@ export default {
         },
         {
           title: "Digitalisasi sebagai Pendorong Utama Soft Power Negara di Era Globalisasi",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/Digitalisasi%20sebagai%20Pendorong%20Utama%20Soft%20Power%20Negara%20di%20Era%20Globalisasi.pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Digitalisasi%20sebagai%20Pendorong%20Utama%20Soft%20Power%20Negara%20di%20Era%20Globalisasi.pdf",
           tags: ["Digitalization", "Digital Diplomacy", "Soft Power", "Foreign Policy"],
           year: '2023',
           abstract:
@@ -92,7 +92,7 @@ export default {
         },
         {
           title: "Upaya Indonesia dalam Meningkatkan Strategi Keamanan Siber melalui Kerjasama Indonesia-Inggris",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/Upaya%20Indonesia%20dalam%20Meningkatkan%20Strategi%20Keamanan%20Siber%20melalui%20Kerjasama%20Indonesia-Inggris.pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Upaya%20Indonesia%20dalam%20Meningkatkan%20Strategi%20Keamanan%20Siber%20melalui%20Kerjasama%20Indonesia-Inggris.pdf",
           tags: ["Diplomacy", "Cyber Security", "Bilateral"],
           year: '2022',
           abstract:
@@ -100,7 +100,7 @@ export default {
         },
         {
           title: "Diplomasi Lingkungan Indonesia di Era Kepemimpinan Susilo Bambang Yudhoyono: Studi Kasus Kabut Asap Lintas Batas di Asia Tenggara",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/Diplomasi%20Lingkungan%20Indonesia%20di%20Era%20Kepemimpinan%20Susilo%20Bambang%20Yudhoyono.%20Studi%20Kasus%20Kabut%20Asap%20Lintas%20Batas%20di%20Asia%20Tenggara.pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Diplomasi%20Lingkungan%20Indonesia%20di%20Era%20Kepemimpinan%20Susilo%20Bambang%20Yudhoyono.%20Studi%20Kasus%20Kabut%20Asap%20Lintas%20Batas%20di%20Asia%20Tenggara.pdf",
           tags: ["Diplomacy", "Climate", "Foreign Policy", "SBY"],
           year: '2022',
           abstract:
@@ -116,7 +116,7 @@ export default {
         },
         {
           title: "Sistem Nilai Tukar Mengambang: Studi Kasus Krisis Finansial Asia 1998",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/Sistem%20Nilai%20Tukar%20Mengambang%20(Studi%20Kasus%20Krisis%20Finansial%20Asia).pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Sistem%20Nilai%20Tukar%20Mengambang%20(Studi%20Kasus%20Krisis%20Finansial%20Asia).pdf",
           tags: ["Financial Crisis", "IMF"],
           year: '2022',
           abstract:
@@ -124,7 +124,7 @@ export default {
         },
         {
           title: "Komunikasi Kepemimpinan",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/Komunikasi%20Kepemimpinan.pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Komunikasi%20Kepemimpinan.pdf",
           tags: ["Leadership", "Communication"],
           year: '2022',
           abstract:
@@ -132,7 +132,7 @@ export default {
         },
         {
           title: "Pengaruh Penggunaan Sosial Media Instagram terhadap Perilaku Remaja",
-          link: "https://muhammad-zulfikar.github.io/documents/publications/files/PENGARUH%20PENGGUNAAN%20SOSIAL%20MEDIA%20INSTAGRAM%20TERHADAP%20PERILAKU%20REMAJA.pdf",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/PENGARUH%20PENGGUNAAN%20SOSIAL%20MEDIA%20INSTAGRAM%20TERHADAP%20PERILAKU%20REMAJA.pdf",
           tags: ["Social Media", "Behaviour"],
           year: '2021',
           abstract:
