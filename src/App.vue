@@ -178,18 +178,10 @@ export default {
       window.innerHeight - navbarHeight - topNavbarHeight + "px"
     );
 
-    // Open biographyWindow only if not in mobile
-    if (!this.isMobile) {
-      this.openWindow("biographyWindow");
-    }
-
     // Set all windows to fullscreen in mobile
     if (this.isMobile) {
       this.$store.dispatch("setAllWindowsFullscreen", true);
     }
-
-    // Handling URL path
-    this.handleUrlPath();
   },
 
   methods: {
@@ -217,17 +209,6 @@ export default {
         setTimeout(() => {
           this.$store.commit("zIndexIncrement", "");
         }, 0);
-      }
-    },
-
-    // Handling URL Path
-    handleUrlPath() {
-      const path = window.location.pathname.substring(1);
-      const targetWindow = this.windows.find(w => w.displayName.toLowerCase() === path);
-
-      // Open the window if found
-      if (targetWindow) {
-        this.openWindow(targetWindow.windowId);
       }
     },
   
