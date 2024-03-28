@@ -20,18 +20,23 @@
     </div>
 
     <div class="content">
-        <div v-for="(publication, index) in filteredPublications" :key="index">
-          <a class="title" :href="publication.link" target="_blank">
-            {{ publication.title }}
-          </a>
-          <div class="tags">
-            <button v-for="(tags, tagIndex) in publication.tags" :key="tagIndex">
-              <label>{{ tags }}</label>
-            </button>
-          </div>
-          <p class="abstract">{{ publication.abstract }}<a :href="publication.link">Read more</a></p>
-          <hr>
+      <div v-for="(publication, index) in filteredPublications" :key="index">
+        <a class="title" :href="publication.link" target="_blank">
+          {{ publication.title }}
+        </a>
+        <div class="tags">
+          <button v-for="(tags, tagIndex) in publication.tags" :key="tagIndex">
+            <label>{{ tags }}</label>
+          </button>
         </div>
+        <p class="abstract">{{ publication.abstract }}</p>
+        <div class="link">
+          <button>
+            <label><a :href="publication.link">Read more</a></label>
+          </button>
+        </div>
+        <hr>
+      </div>
     </div>
   </div>
 </template>
@@ -64,7 +69,7 @@ export default {
           tags: ["International Law", "Invasion", "Conflict", "Realism"],
           year: '2023',
           abstract:
-            "Invasi Rusia ke Ukraina pada tahun 2022 merupakan pelanggaran serius terhadap hukum internasional. Tindakan ini tidak memiliki pembenaran dan merupakan penggunaan kekuatan dan kekerasan yang ilegal, serta merupakan aksi agresi. Alasan Rusia untuk melakukan invasi, seperti menjaga keamanan negara dan penduduknya dari ancaman NATO, tidak dapat diterima berdasarkan hukum internasional.",
+            "Invasi Rusia ke Ukraina pada tahun 2022 merupakan pelanggaran serius terhadap hukum internasional. Tindakan ini tidak memiliki pembenaran dan merupakan penggunaan kekuatan dan kekerasan yang ilegal, serta merupakan aksi agresi.",
         },
         {
           title: "Peran ASEAN dalam Mengatasi Masalah Human Security Terorisme: Studi Kasus Bom Bali",
@@ -142,9 +147,9 @@ export default {
     };
   },
   computed: {
-      filteredPublications() {
-        return this.publications.filter(pub => pub.year === this.activeTab);
-      },
+    filteredPublications() {
+      return this.publications.filter(pub => pub.year === this.activeTab);
+    },
   },
   methods: {
     setActiveTab(tab) {
@@ -238,7 +243,7 @@ export default {
   border-left: solid rgb(250, 250, 250) 3px;
   border-bottom: solid rgb(90, 90, 90) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
-  padding: 10px;
+  padding-inline: 20px;
   margin-top: -3px;
   position: relative;
   z-index: 1;
@@ -246,23 +251,20 @@ export default {
 
 .title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
+  text-align: left;
+  text-decoration: underline;
   color: inherit;
-  font-weight: bold;
   font-size: 16px;
   cursor: url('@/assets/cursor/pointer.cur'), auto !important;
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
 }
-
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   text-align: center;
+  margin-bottom: 20px;
+  margin-left: -5px;
 }
 
 .tags button {
@@ -271,7 +273,7 @@ export default {
   padding: 5px;
   padding-bottom: 2.5px;
   height: 25px;
-  margin: 5px 5px 2px 5px;
+  margin: 5px;
   width: auto;
   border: 2px solid white;
   background: rgb(189, 190, 189);
@@ -290,15 +292,51 @@ export default {
 
 .abstract {
   font-size: 14px;
-  text-align: justify;
-  margin-bottom: 30px;
-  padding: 20px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 .abstract a {
   color: inherit;
   cursor: url('@/assets/cursor/pointer.cur'), auto !important;
   margin-left: 5px;
+}
+
+.link {
+	display: flex;
+	justify-content: right;
+  align-items: center;
+	text-align: center;
+  margin-bottom: 20px;
+}
+
+.link button {
+	display: flex;
+	align-items: center;
+  justify-content: center;
+	padding: 5px;
+	height: 30px;
+	margin: 10px 10px 0 0;
+	width: auto;
+	border: 2px solid white;
+	background: rgb(189, 190, 189);
+	box-shadow: 1.5px 1.5px black;
+	border-top: solid rgb(250, 250, 250) 1.5px;
+	border-left: solid rgb(250, 250, 250) 1.5px;
+	border-bottom: solid rgb(90, 90, 90) 1.5px;
+	border-right: solid rgb(90, 90, 90) 1.5px;
+	cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+}
+
+.link button label a {
+  text-decoration: underline;
+  color: inherit;
+  font-size: 14px;
+  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+}
+
+.link button:hover {
+	background-color: darkgray;
 }
 
 /* Normalize */
@@ -311,6 +349,7 @@ h4 {
 
 /* Media query */
 @media screen and (max-width: 1024px) {
+
   /* Tabs */
   .tabs {
     display: flex;
@@ -320,7 +359,7 @@ h4 {
   }
 
   .tab {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+    cursor: url('@/assets/cursor/pointer.cur'), auto !important;
     padding: 7px 5px 5px 5px;
     margin-right: .3px;
     border-top: solid rgb(250, 250, 250) 2px;
@@ -342,7 +381,6 @@ h4 {
     border-left: solid rgb(250, 250, 250) 2px;
     border-bottom: solid rgb(90, 90, 90) 2px;
     border-right: solid rgb(90, 90, 90) 2px;
-    padding: 10px;
     margin-top: -2px;
     position: relative;
     z-index: 1;
@@ -350,8 +388,6 @@ h4 {
 
   .abstract {
     margin-top: 20px;
-    padding: 5px;
   }
 }
-
 </style>
