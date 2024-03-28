@@ -1,6 +1,6 @@
 # [Windows 95 Themed Portfolio](https://muhammad-zulfikar.web.app)
 
-<img width="1440" alt="Screenshot" src="https://user-images.githubusercontent.com/24926784/145944730-48de7cfc-d585-41a9-8f90-f5d08570a03e.png">
+<img width="1440" alt="Screenshot" src="/Screenshot.png">
 
 # Frameworks and Libraries used
 - Vue.js 2
