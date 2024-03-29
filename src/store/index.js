@@ -561,7 +561,7 @@ export default new Vuex.Store({
         iconImage: "search.png",
         altText: "Explorer",
         fullscreen: false,
-        showInAppGrid: true,
+        showInAppGrid: false,
         showInNavbar: true,
       },
 

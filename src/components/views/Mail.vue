@@ -82,8 +82,6 @@ export default {
 </script>
 
 <style scoped>
-@import '../template/StartMenu.css';
-
 /* --- FILE MENU BARS --- */
 .menu-bar__container {
   box-shadow: var(--control-shadow);

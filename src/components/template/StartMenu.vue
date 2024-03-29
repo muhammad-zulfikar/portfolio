@@ -42,6 +42,24 @@
             <div class="start-menu__submenu">
               <div class="start-menu__submenu-item">
                 <img class="start-menu__submenu-icon" src="@/assets/icons/img/startmenu/SubFolder.png" alt="SubFolder">
+                <span>Accessories</span>
+                <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu"
+                  class="start-menu__item-menu-indicator">
+                <div class="start-menu__submenu-container">
+                  <div class="start-menu__submenu">
+                    <div class="start-menu__submenu-item" @click="openWindow('notepadWindow')">
+                      <img class="start-menu__submenu-icon" src="@/assets/icons/win95/notepad.png" alt="Text File">
+                      <span>Notepad</span>
+                    </div>
+                    <div class="start-menu__submenu-item" @click="openWindow('explorerWindow')">
+                      <img class="start-menu__submenu-icon" src="@/assets/icons/win95/folder.png" alt="Text File">
+                      <span>Explorer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="start-menu__submenu-item">
+                <img class="start-menu__submenu-icon" src="@/assets/icons/img/startmenu/SubFolder.png" alt="SubFolder">
                 <span>Contact Info</span>
                 <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu"
                   class="start-menu__item-menu-indicator">
@@ -132,10 +150,6 @@
                 <img class="start-menu__submenu-icon" src="@/assets/icons/win95/mail.png" alt="Text File">
                 <span>Mail</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('notepadWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/notepad.png" alt="Text File">
-                <span>Notepad</span>
-              </div>
             </div>
           </div>
         </div>
@@ -170,7 +184,7 @@ export default {
 </script>
 
 <style scoped>
-@import './StartMenu.css';
+@import '@/assets/css/windows/StartMenu.css';
 
 /* --- START MENU --- */
 /* .start-menu__container {
