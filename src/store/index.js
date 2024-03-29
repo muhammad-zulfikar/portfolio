@@ -566,10 +566,6 @@ export default new Vuex.Store({
       },
 
     ],
-    mailContent: "",
-    mailSender: "",
-    mailSubject: "New Message",
-    mailSent: false,
   },
   mutations: {
     // Active Window Mutator

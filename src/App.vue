@@ -1,50 +1,39 @@
 <template>
   <div id="app">
 
-      <!-- Top Navbar -->
-      <top-navbar id="top-navbar"></top-navbar>
+    <!-- Top Navbar -->
+    <top-navbar id="top-navbar"></top-navbar>
 
-      <!-- Windows -->
-      <div class="screen" id="screen" @click="deinitWindows">
-        <div
-          v-for="window in windows"
-          :key="window.key"
-          :aria-label="window.displayName"
-        >
-          <component
-            :is="window.windowComponent"
-            :nameOfWindow="window.windowId"
-            :content_padding_bottom="isMobile ? window.windowContentPadding.mobile?.bottom ?? window.windowContentPadding.bottom : window.windowContentPadding.bottom"
-            :content_padding_left="isMobile ? window.windowContentPadding.mobile?.left ?? window.windowContentPadding.left : window.windowContentPadding.left"
-            :content_padding_right="isMobile ? window.windowContentPadding.mobile?.right ?? window.windowContentPadding.right : window.windowContentPadding.right"
-            :content_padding_top="isMobile ? window.windowContentPadding.mobile?.top ?? window.windowContentPadding.top : window.windowContentPadding.top"
-            :id="window.windowId"
-            :style="{
-              position: window.position,
-              left: isMobile ? window.positionXMobile : window.positionX,
-              top: isMobile ? window.positionYMobile : window.positionY,
-            }"
-            :folderContent="window.folderContent"
-            :folderSize="window.folderSize"
-            v-if="windowCheck(window.windowId)"
-          >
-            <component :is="window.windowContent" slot="content"> </component>
-          </component>
-        </div>
-        <app-grid></app-grid>
+    <!-- Windows -->
+    <div class="screen" id="screen" @click="deinitWindows">
+      <div v-for="window in windows" :key="window.key" :aria-label="window.displayName">
+        <component :is="window.windowComponent" :nameOfWindow="window.windowId"
+          :content_padding_bottom="isMobile ? window.windowContentPadding.mobile?.bottom ?? window.windowContentPadding.bottom : window.windowContentPadding.bottom"
+          :content_padding_left="isMobile ? window.windowContentPadding.mobile?.left ?? window.windowContentPadding.left : window.windowContentPadding.left"
+          :content_padding_right="isMobile ? window.windowContentPadding.mobile?.right ?? window.windowContentPadding.right : window.windowContentPadding.right"
+          :content_padding_top="isMobile ? window.windowContentPadding.mobile?.top ?? window.windowContentPadding.top : window.windowContentPadding.top"
+          :id="window.windowId" :style="{
+      position: window.position,
+      left: isMobile ? window.positionXMobile : window.positionX,
+      top: isMobile ? window.positionYMobile : window.positionY,
+    }" :folderContent="window.folderContent" :folderSize="window.folderSize"
+          v-if="windowCheck(window.windowId)">
+          <component :is="window.windowContent" slot="content"> </component>
+        </component>
       </div>
+      <app-grid></app-grid>
+    </div>
 
-      <!-- Start menu & Navbar -->
-      <StartMenu
-        v-if="$store.getters.getActiveWindow == 'Menu'"
-        style="position: absolute; z-index: 9999; left: 0; bottom: 30px">
-      </StartMenu>
-      <navbar style="position: absolute; bottom: 0; z-index: 9999" id="navbar" />
+    <!-- Start menu & Navbar -->
+    <StartMenu v-if="$store.getters.getActiveWindow == 'Menu'"
+      style="position: absolute; z-index: 9999; left: 0; bottom: 30px">
+    </StartMenu>
+    <navbar style="position: absolute; bottom: 0; z-index: 9999" id="navbar" />
 
-      <!-- Popup message -->
-      <Popup v-if="showDefaultPopup" :message="defaultPopupMessage" />
-      <Popup v-if="isMobile && showMobilePopup" :message="mobilePopupMessage" />
-      <Popup v-if="mailSent && showMailSentPopup" :message="mailSentPopupMessage" />
+    <!-- Popup message -->
+    <Popup v-if="showDefaultPopup" :message="defaultPopupMessage" />
+    <Popup v-if="isMobile && showMobilePopup" :message="mobilePopupMessage" />
+    <Popup v-if="mailSent && showMailSentPopup" :message="mailSentPopupMessage" />
 
   </div>
 </template>
@@ -178,9 +167,11 @@ export default {
       window.innerHeight - navbarHeight - topNavbarHeight + "px"
     );
 
-    // Set all windows to fullscreen in mobile
+    // Set all windows to fullscreen in mobile and open biography window on desktop
     if (this.isMobile) {
       this.$store.dispatch("setAllWindowsFullscreen", true);
+    } else {
+      this.openWindow("biographyWindow");
     }
   },
 
@@ -211,7 +202,7 @@ export default {
         }, 0);
       }
     },
-  
+
   },
 };
 </script>
@@ -254,11 +245,8 @@ html {
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 15px;
-  background: repeating-conic-gradient(
-      rgb(189, 190, 189) 0% 25%,
-      rgb(255, 255, 255) 0% 50%
-    )
-    50% / 2px 2px;
+  background: repeating-conic-gradient(rgb(189, 190, 189) 0% 25%,
+      rgb(255, 255, 255) 0% 50%) 50% / 2px 2px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -272,12 +260,9 @@ html {
 
 @media only screen and (max-width: 600px) {
   ::-webkit-scrollbar {
-  width: 10px;
-  background: repeating-conic-gradient(
-      rgb(189, 190, 189) 0% 25%,
-      rgb(255, 255, 255) 0% 50%
-    )
-    50% / 2px 2px;
+    width: 10px;
+    background: repeating-conic-gradient(rgb(189, 190, 189) 0% 25%,
+        rgb(255, 255, 255) 0% 50%) 50% / 2px 2px;
   }
 }
 
