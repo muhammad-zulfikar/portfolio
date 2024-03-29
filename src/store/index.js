@@ -561,7 +561,7 @@ export default new Vuex.Store({
         iconImage: "search.png",
         altText: "Explorer",
         fullscreen: false,
-        showInAppGrid: false,
+        showInAppGrid: true,
         showInNavbar: true,
       },
 
@@ -574,19 +574,7 @@ export default new Vuex.Store({
   mutations: {
     // Active Window Mutator
     setActiveWindow(state, window) {
-      const activeWindow = state.windows.find((w) => w.windowId === window);
-      if (activeWindow) {
-        state.activeWindow = window;
-
-        // Use displayName for the URL
-        const path = `/${activeWindow.displayName.toLowerCase()}`;
-        history.pushState({ path }, "", path);
-      } else {
-        state.activeWindow = window;
-
-        // Remove the URL path when the window is closed
-        history.pushState({}, "", "/");
-      }
+      state.activeWindow = window;
     },
 
     pushNewWindow(state, window) {

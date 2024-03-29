@@ -4,7 +4,6 @@ import store from "./store";
 import moment from "moment";
 import VueInteractJs from "vue-interactjs";
 import Vue2TouchEvents from "vue2-touch-events";
-import router from '../router/index';
 
 Vue.use(Vue2TouchEvents, {
   disableClick: true,
