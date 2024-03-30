@@ -148,12 +148,12 @@ export default {
           githubLink: "https://github.com/muhammad-zulfikar/portfolio",
         },
         {
-          title: "Zulfikar's File Server",
+          title: "muhammad-zulfikar.github.io",
           windowId: "zulfikarfileserverWindow",
           iframeSrc:"/files/projects/webdev/zulfikarfileserver.png",
-          tags: ["HTML", "CSS", "Javascript"],
+          tags: ["Javascript"],
           desc:
-            "A personal file server hosting at github",
+            "zulfikar's personal desktop, now in windows 98",
           githubLink: "https://github.com/muhammad-zulfikar/muhammad-zulfikar.github.io",
         },
         {

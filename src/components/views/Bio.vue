@@ -49,7 +49,7 @@
       </button>
       <button @click="selectContent('publications')" :class="{ active: selectedButton === 'publications' }"
         id="publicationsSection">
-        <img src='@/assets/icons/win95/resume.png'>
+        <img src='@/assets/icons/win95/printer.png'>
         <label>Publications</label>
       </button>
       <button @click="openWindow('resumeWindow')">

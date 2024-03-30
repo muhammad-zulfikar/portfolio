@@ -259,7 +259,7 @@ export default new Vuex.Store({
         positionY: "9.5vh",
         positionXMobile: "10vw", // Mobile specific position
         positionYMobile: "30vh", // Mobile specific position
-        iconImage: "resume.png",
+        iconImage: "printer.png",
         altText: "Publications",
         fullscreen: false,
         showInAppGrid: true,
@@ -297,6 +297,37 @@ export default new Vuex.Store({
         showInNavbar: true,
       },
 
+      // Explorer 
+      {
+        windowId: "explorerWindow",
+        windowState: "close",
+        displayName: "Explorer",
+        windowComponent: "window",
+        windowContent: "Explorer",
+        windowContentPadding: {
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0",
+          mobile: {
+            top: "2px", // Mobile specific padding
+            right: "2px", // Mobile specific padding
+            bottom: "2px", // Mobile specific padding
+            left: "2px", // Mobile specific padding
+          },
+        },
+        position: "absolute",
+        positionX: "23.6vw",
+        positionY: "9.5vh",
+        positionXMobile: "2vw", // Mobile specific position
+        positionYMobile: "10vh", // Mobile specific position
+        iconImage: "resume.png",
+        altText: "Explorer",
+        fullscreen: false,
+        showInAppGrid: true,
+        showInNavbar: true,
+      },
+
       // Notepad
       {
         windowId: "notepadWindow",
@@ -324,7 +355,7 @@ export default new Vuex.Store({
         iconImage: "notepad.png",
         altText: "Notepad",
         fullscreen: false,
-        showInAppGrid: false,
+        showInAppGrid: true,
         showInNavbar: true,
       },
 
@@ -471,7 +502,7 @@ export default new Vuex.Store({
         positionXMobile: "2vw", // Mobile specific position
         positionYMobile: "10vh", // Mobile specific position
         iconImage: "search.png",
-        altText: "Zulfikar's File Server",
+        altText: "muhammad-zulfikar.github.io",
         fullscreen: true,
         showInAppGrid: false,
         showInNavbar: true,
@@ -535,36 +566,6 @@ export default new Vuex.Store({
         showInNavbar: true,
       },
 
-      {
-        windowId: "explorerWindow",
-        windowState: "close",
-        displayName: "Explorer",
-        windowComponent: "window",
-        windowContent: "Explorer",
-        windowContentPadding: {
-          top: "0",
-          right: "0",
-          bottom: "0",
-          left: "0",
-          mobile: {
-            top: "2px", // Mobile specific padding
-            right: "2px", // Mobile specific padding
-            bottom: "2px", // Mobile specific padding
-            left: "2px", // Mobile specific padding
-          },
-        },
-        position: "absolute",
-        positionX: "23.6vw",
-        positionY: "9.5vh",
-        positionXMobile: "2vw", // Mobile specific position
-        positionYMobile: "10vh", // Mobile specific position
-        iconImage: "search.png",
-        altText: "Explorer",
-        fullscreen: false,
-        showInAppGrid: false,
-        showInNavbar: true,
-      },
-
     ],
   },
   mutations: {
@@ -604,22 +605,6 @@ export default new Vuex.Store({
     // Set height of max-height of fullscreen window
     setFullscreenWindowHeight(state, height) {
       state.fullscreenWindowHeight = height;
-    },
-
-    updateMail(state, local) {
-      state.isShownMail = local;
-    },
-    updateMailSubject(state, local) {
-      state.mailSubject = local;
-    },
-    updateMailContent(state, local) {
-      state.mailContent = local;
-    },
-    updateMailSender(state, local) {
-      state.mailSender = local;
-    },
-    updateMailSent(state, local) {
-      state.mailSent = local;
     },
 
     setFullscreen(state, payload) {

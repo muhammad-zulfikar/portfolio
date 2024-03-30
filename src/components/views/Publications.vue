@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="!hideHeader" class="header">
-      <img class="header-img" :src="getImageSrc('resume.png', true)" alt="Publications Image">
+      <img class="header-img" :src="getImageSrc('printer.png', true)" alt="Publications Image">
       <h3 class="header-title">{{ headerTitle }}</h3>
       <h4 class="header-subtitle">{{ headerSubtitle }}</h4>
     </div>
