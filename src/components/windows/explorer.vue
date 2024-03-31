@@ -373,11 +373,18 @@ export default {
                             link: 'https://muhammad-zulfikar.github.io/files/documents/publications/Revolution%20in%20Military%20Affairs%20-%20Kebangkitan%20dan%20Revolusi%20China%20dalam%20Militer%20dan%20Ekonomi%20yang%20mengancam%20Amerika%20Serikat.pdf'
                         },
                         {
+                            name: 'Natalitas dan Isu Lingkungan...',
+                            path: '/publications',
+                            icon: 'WordPad',
+                            type: 'file',
+                            link: 'https://muhammad-zulfikar.github.io/files/documents/publications/Revolution%20in%20Military%20Affairs%20-%20Kebangkitan%20dan%20Revolusi%20China%20dalam%20Militer%20dan%20Ekonomi%20yang%20mengancam%20Amerika%20Serikat.pdf'
+                        },
+                        {
                             name: 'Digitalisasi sebagai Pendorong...',
                             path: '/publications',
                             icon: 'WordPad',
                             type: 'file',
-                            link: 'https://muhammad-zulfikar.github.io/files/documents/publications/Digitalisasi%20sebagai%20Pendorong%20Utama%20Soft%20Power%20Negara%20di%20Era%20Globalisasi.pdf'
+                            link: 'https://muhammad-zulfikar.github.io/files/documents/publications/Natalitas%20dan%20Isu%20Lingkungan:%20Respon%20UNFCCC%20Terhadap%20Lonjakan%20Natalitas%20di%20Brasil%20yang%20Mengakibatkan%20Deforestasi%20di%20Amazon.pdf'
                         },
                         {
                             name: 'Sistem Nilai Tukar Mengambang...',

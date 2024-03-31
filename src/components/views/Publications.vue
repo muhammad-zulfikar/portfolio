@@ -104,6 +104,14 @@ export default {
             "Penyalahgunaan internet oleh oknum-oknum tertentu telah menyebabkan berbagai kejahatan siber atau yang sering disebut sebagai perang siber. Menyadari ancaman yang bersifat internasional tersebut, Indonesia terlibat dalam kerjasama bilateral dengan Inggris, untuk mengatasi dan memerangi ancaman siber yang semakin meningkat.",
         },
         {
+          title: "Natalitas dan Isu Lingkungan : Respon UNFCCC Terhadap Lonjakan Natalitas di Brasil yang Mengakibatkan Deforestasi di Amazon",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Natalitas%20dan%20Isu%20Lingkungan:%20Respon%20UNFCCC%20Terhadap%20Lonjakan%20Natalitas%20di%20Brasil%20yang%20Mengakibatkan%20Deforestasi%20di%20Amazon.pdf",
+          tags: ["Environment", "IO"],
+          year: '2023',
+          abstract:
+            "Meningkatnya angka kelahiran manusia dapat memberikan tekanan yang sangat besar terhadap ekosistem, terutama jika peningkatan angka kelahiran tidak diimbangi dengan praktik-praktik berkelanjutan. Brasil, negara dengan pertumbuhan penduduk yang pesat, terkena dampak paling parah di wilayah Amazon. Deforestasi yang disebabkan oleh aktivitas manusia, khususnya pertumbuhan penduduk, merupakan permasalahan serius yang perlu mendapat perhatian serius.",
+        },
+        {
           title: "Diplomasi Lingkungan Indonesia di Era Kepemimpinan Susilo Bambang Yudhoyono: Studi Kasus Kabut Asap Lintas Batas di Asia Tenggara",
           link: "https://muhammad-zulfikar.github.io/files/documents/publications/Diplomasi%20Lingkungan%20Indonesia%20di%20Era%20Kepemimpinan%20Susilo%20Bambang%20Yudhoyono.%20Studi%20Kasus%20Kabut%20Asap%20Lintas%20Batas%20di%20Asia%20Tenggara.pdf",
           tags: ["Diplomacy", "Climate", "Foreign Policy", "SBY"],
