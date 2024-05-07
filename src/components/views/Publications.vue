@@ -8,7 +8,10 @@
     <hr>
 
     <div class="tabs">
-      <div class="tab" :class="{ 'active-tab first': activeTab === '2023' }" @click="setActiveTab('2023')">
+      <div class="tab" :class="{ 'active-tab first': activeTab === '2024' }" @click="setActiveTab('2024')">
+        2024
+      </div>
+      <div class="tab" :class="{ 'active-tab': activeTab === '2023' }" @click="setActiveTab('2023')">
         2023
       </div>
       <div class="tab" :class="{ 'active-tab': activeTab === '2022' }" @click="setActiveTab('2022')">
@@ -53,8 +56,24 @@ export default {
     return {
       headerTitle: 'Publications',
       headerSubtitle: 'A complete collection of my academic works, including papers, articles, journals, and publications. Mostly IR-related stuff',
-      activeTab: '2023',
+      activeTab: '2024',
       publications: [
+        {
+          title: "Meninjau Kembali Komitmen Indonesia dalam Paris Agreement 2015 Era Jokowi (Energi Baru Terbarukan)",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Meninjau%20Kembali%20Komitmen%20Indonesia%20dalam%20Paris%20Agreement%202015%20Era%20Jokowi%20(Energi%20Baru%20Terbarukan)%20.pdf",
+          tags: ["Environmental Issues", "Renewable Energy", "Paris Agreement", "Joko Widodo"],
+          year: '2024',
+          abstract:
+            "Isu lingkungan dan perubahan iklim akibat emisi gas rumah kaca dari pembakaran bahan bakar fosil telah menjadi tantangan global yang mengharuskan pencarian solusi berkelanjutan. Penggunaan energi tidak terbarukan seperti minyak bumi, gas alam, dan batubara sebagai praktek utama di seluruh dunia telah mengakibatkan dampak negatif signifikan terhadap lingkungan seperti pencemaran, degradasi lingkungan, dan kerusakan habitat. Oleh karena itu, transisi ke Energi Baru Terbarukan (EBT) yang memanfaatkan sumber daya terbarukan seperti matahari, angin, air, dan biomassa menjadi solusi penting yang lebih ramah lingkungan dan berkelanjutan. Indonesia, sebagai negara dengan emisi gas rumah kaca cukup besar, memiliki tanggung jawab untuk berkontribusi dalam upaya mitigasi perubahan iklim sesuai kesepakatan Paris Agreement 2015.",
+        },
+        {
+          title: "Pengaruh Kebijakan Ekspor Nikel Indonesia Terhadap Gugatan Uni Eropa di WTO dan Implikasinya Terhadap Perdagangan Internasional",
+          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Pengaruh%20Kebijakan%20Ekspor%20Nikel%20Indonesia%20Terhadap%20Gugatan%20Uni%20Eropa%20di%20WTO%20dan%20Implikasinya%20Terhadap%20Perdagangan%20Internasional.pdf.pdf",
+          tags: ["Indonesia's Foreign Policy", "World Trade Organization", "European Union"],
+          year: '2024',
+          abstract:
+            "Nikel menjadi komoditas penting dalam perdagangan internasional, terutama dalam industri baja tahan karat dan baterai ion lithium. Kebijakan larangan ekspor nikel mentah Indonesia memicu reaksi keras dari Uni Eropa yang mengajukan gugatan ke Organisasi Perdagangan Dunia (WTO). Kasus ini mencerminkan pertentangan antara kepentingan nasional Indonesia dalam meningkatkan nilai tambah industri dalam negeri dan kewajiban mematuhi aturan perdagangan internasional.",
+        },
         {
           title: "Revolution in Military Affairs: Kebangkitan dan Revolusi China dalam Militer dan Ekonomi yang mengancam Amerika Serikat",
           link: "https://medium.com/@2110412039/revolution-in-military-affairs-kebangkitan-dan-revolusi-china-dalam-militer-dan-ekonomi-yang-9d3122af8dcf",
