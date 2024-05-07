@@ -324,7 +324,7 @@ export default new Vuex.Store({
         iconImage: "resume.png",
         altText: "Explorer",
         fullscreen: false,
-        showInAppGrid: true,
+        showInAppGrid: false,
         showInNavbar: true,
       },
 
@@ -355,7 +355,7 @@ export default new Vuex.Store({
         iconImage: "notepad.png",
         altText: "Notepad",
         fullscreen: false,
-        showInAppGrid: true,
+        showInAppGrid: false,
         showInNavbar: true,
       },
 
@@ -386,7 +386,7 @@ export default new Vuex.Store({
         iconImage: "harvard.png",
         altText: "CS50X",
         fullscreen: false,
-        showInAppGrid: true,
+        showInAppGrid: false,
         showInNavbar: true,
       },
 
