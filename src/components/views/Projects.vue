@@ -8,8 +8,11 @@
     <hr>
 
     <div class="tabs">
-      <div class="tab" :class="{ 'active-tab first': activeTab === 'data-analysis' }" @click="setActiveTab('data-analysis')">
-        Data Analysis
+      <div class="tab" :class="{ 'active-tab first': activeTab === 'featured' }" @click="setActiveTab('featured')">
+        Featured
+      </div>
+      <div class="tab" :class="{ 'active-tab': activeTab === 'data-analysis' }" @click="setActiveTab('data-analysis')">
+        Data & ML
       </div>
       <div class="tab" :class="{ 'active-tab': activeTab === 'web-dev' }" @click="setActiveTab('web-dev')">
         Web Development
@@ -19,12 +22,38 @@
       </div>
     </div>
 
+    <div v-if="activeTab === 'featured'" class="content" >
+      <div v-for="(featured, index) in featureds" :key="index">
+      <a class="title">
+        {{ featured.title }}
+      </a>
+      <img :src="featured.imgSrc" class="img"></img>
+      <div class="tags">
+        <button v-for="(tags, tagIndex) in featured.tags" :key="tagIndex">
+        <label>{{ tags }}</label>
+        </button>
+      </div>
+      <p class="desc">{{ featured.desc }}</p>
+      <div class="link">
+        <button v-if="featured.showSite" @click="redirect(featured.siteLink)">
+          <img src='@/assets/icons/win95/search.png'>
+          <label>Site</label>
+        </button>
+        <button @click="redirect(featured.githubLink)">
+          <img src='@/assets/icons/social/github.png'>
+          <label>GitHub</label>
+        </button>
+        </div>
+        <hr>
+      </div>
+    </div>
+
     <div v-if="activeTab === 'data-analysis'" class="content">
       <div v-for="(data, index) in datas" :key="index">
-        <a class="title" @click="openWindow(data.windowId)">
+        <a class="title">
           {{ data.title }}
         </a>
-        <iframe :src="data.iframeSrc"></iframe>
+        <img :src="data.imgSrc" class="img"></img>
         <div class="tags">
           <button v-for="(tags, tagIndex) in data.tags" :key="tagIndex">
             <label>{{ tags }}</label>
@@ -32,11 +61,15 @@
         </div>
         <p class="desc">{{ data.desc }}</p>
         <div class="link">
-          <button @click="openWindow(data.windowId)">
+          <button v-if="data.showSite" @click="redirect(data.siteLink)">
+            <img src='@/assets/icons/win95/search.png'>
+            <label>Site</label>
+          </button>
+          <button v-if="data.showDocumentation" @click="openWindow(data.windowId)">
             <img src='@/assets/icons/win95/directory.png'>
             <label>Documentation</label>
           </button>
-          <button @click="redirectToGitHub(data.githubLink)">
+          <button v-if="data.showGitHub" @click="redirect(data.githubLink)">
             <img src='@/assets/icons/social/github.png'>
             <label>GitHub</label>
           </button>
@@ -47,10 +80,10 @@
 
     <div v-if="activeTab === 'web-dev'" class="content" >
       <div v-for="(webdev, index) in webdevs" :key="index">
-        <a class="title" @click="openWindow(webdev.windowId)">
+        <a class="title">
           {{ webdev.title }}
         </a>
-        <img :src="webdev.iframeSrc" class="img"></img>
+        <img :src="webdev.imgSrc" class="img"></img>
         <div class="tags">
           <button v-for="(tags, tagIndex) in webdev.tags" :key="tagIndex">
             <label>{{ tags }}</label>
@@ -60,9 +93,9 @@
         <div class="link">
           <button @click="openWindow(webdev.windowId)">
             <img src='@/assets/icons/win95/search.png'>
-            <label>Demo</label>
+            <label>Site</label>
           </button>
-          <button @click="redirectToGitHub(webdev.githubLink)">
+          <button @click="redirect(webdev.githubLink)">
             <img src='@/assets/icons/social/github.png'>
             <label>GitHub</label>
           </button>
@@ -73,10 +106,10 @@
 
     <div v-if="activeTab === 'others'" class="content">
       <div v-for="(other, index) in others" :key="index">
-        <a class="title" @click="redirectToGitHub(other.githubLink)">
+        <a class="title">
           {{ other.title }}
         </a>
-        <img :src="other.iframeSrc" class="img"></img>
+        <img :src="other.imgSrc" class="img"></img>
         <div class="tags">
           <button v-for="(tags, tagIndex) in other.tags" :key="tagIndex">
             <label>{{ tags }}</label>
@@ -84,7 +117,7 @@
         </div>
         <p class="desc">{{ other.desc }}</p>
         <div class="link">
-          <button @click="redirectToGitHub(other.githubLink)">
+          <button @click="redirect(other.githubLink)">
             <img src='@/assets/icons/social/github.png'>
             <label>GitHub</label>
           </button>
@@ -108,67 +141,99 @@ export default {
     return {
       headerTitle: 'Projects',
       headerSubtitle: 'A complete lists of my projects. You can also see it in <a href="https://github.com/muhammad-zulfikar">GitHub</a>',
-      activeTab: 'data-analysis',
-      datas: [
+      activeTab: 'featured',
+      featureds: [
         {
-          title: "Retail Analytics - Data Analysis at Quantium",
-          windowId: "quantiumWindow",
-          iframeSrc:
-            "https://drive.google.com/file/d/1JaaSKAHkucj1SOx4q9HzT562fE0sHLJv/preview",
-          tags: [
-            "Data Analysis",
-            "Python",
-            "Power BI",
-            "PowerPoint",
-          ],
-          desc:
-            "I recently participated in Quantium's virtual internship. I worked on a project to conduct analyses on a client's transaction dataset and identify customer purchasing behaviours to generate insights and provide commercial recommendations. I used Python and built my Data Visualisation in PowerBI.",
-          githubLink: "https://github.com/muhammad-zulfikar/quantium",
+          title: "Vue Notes",
+          windowId: "win95portfolioWindow",
+          imgSrc:"/files/projects/webdev/vue-notes.png",
+          tags: ["Vue", "Firebase"],
+          desc: "Created a Note App as Final Project for the CS50X: Harvard Computer Science Course.",
+          githubLink: "https://github.com/muhammad-zulfikar/vue-notes",
+          siteLink: "https://vue-verse.web.app",
+          showSite: true,
         },
         {
-          title: "Credit Risk Predictive Model - Data Scientist at ID/X Partners",
-          windowId: "idxWindow",
-          iframeSrc: "https://muhammad-zulfikar.github.io/files/documents/projects/idx_partners/choropleth.html",
-          tags: ["Data Analysis", "Python", "Data Visualization"],
-          desc:
-            "During my internship at ID/X Partners, I had the chance to work on an exciting final project. I was given datasets of approved and rejected loan applications. My goal was to create a model that could predict if a loan application would be approved or rejected. I used my skills in Python to build this predictive model.",
-          githubLink:
-            "https://github.com/muhammad-zulfikar/idxpartners_finalproject",
+          title: "Retail Analytics at Quantium",
+          windowId: "quantiumWindow",
+          imgSrc:"/files/projects/data-analysis/quantium.jpg",
+          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint",],
+          desc: "Analyzed customer and transaction data, conducted uplift testing, and compiled reports with insights.",
+          githubLink: "https://github.com/muhammad-zulfikar/quantium",
+          showSite: false,
+        },
+      ],
+      datas: [
+        {
+          title: "Image Classifier",
+          windowId: "",
+          imgSrc: "/files/projects/data-analysis/imageClassifier.png",
+          tags: ["Machine Learning", "Python"],
+          desc: "Developed a Python-based machine learning model to classify hand gesture images as rock, paper, or scissors.",
+          githubLink: "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
+          showGitHub:true
+        },
+        {
+          title: "Sentiment and Bigram Analysis",
+          windowId: "",
+          imgSrc: "/files/projects/data-analysis/sentiment-analysis.png",
+          tags: ["Web Scraping", "Data Analysis", "R", "RStudio"],
+          desc: "Performed sentiment and bigram analysis in RStudio for my Big Data in IR college project. Deployed to GitHub Pages as RMarkdown.",
+          githubLink: "https://github.com/muhammad-zulfikar/bigdata",
+          showGitHub:true,
+          siteLink: "https://muhammad-zulfikar.github.io/bigdata",
+          showSite: true
+        },
+        {
+          title: "ASEAN COVID-19 Statistics",
+          windowId: "",
+          imgSrc: "/files/projects/data-analysis/aseanCovidStatistics.jpg",
+          tags: ["SAP Analytics Cloud", "Data Visualization"],
+          desc: "Created an interactive visualization in SAP Analytics Cloud to display the COVID-19 statistics for ASEAN countries",
+          githubLink: "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
+        },
+        {
+          title: "Retail Analytics at Quantium",
+          windowId: "quantiumWindow",
+          imgSrc: "/files/projects/data-analysis/quantium.jpg",
+          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint",],
+          desc: "Analyzed customer and transaction data, conducted uplift testing, and compiled reports with insights.",
+          githubLink: "https://github.com/muhammad-zulfikar/quantium",
+          showGitHub:true,
+          showDocumentation: true,
+        },
+        {
+          title: "Credit Risk Predictive Model at ID/X Partners",
+          windowId: "",
+          imgSrc: "/files/projects/data-analysis/idx.png",
+          tags: ["Machine Learning", "Python", "Data Visualization"],
+          desc: "Analyze loan data from ID/X Partners, visualize trends, and build a predictive model for loan approval or rejection.",
+          githubLink: "https://github.com/muhammad-zulfikar/idxpartners_finalproject",
+          showGitHub:true
         },
         // Add more projects here
       ],
       webdevs: [
         {
+          title: "Vue Notes",
+          imgSrc:"/files/projects/webdev/vue-notes.png",
+          tags: ["Vue", "Firebase"],
+          desc: "Created a Note App as Final Project for the CS50X: Harvard Computer Science Course.",
+          githubLink: "https://github.com/muhammad-zulfikar/vue-notes",
+          siteLink: "https://vue-verse.web.app",
+        },
+        {
           title: "Windows 95 Portfolio (This Website)",
-          windowId: "win95portfolioWindow",
-          iframeSrc:"/files/projects/webdev/win95portfolio.png",
+          imgSrc:"/files/projects/webdev/win95portfolio.png",
           tags: ["Vue", "Firebase"],
           desc:
             "A Windows 95 themed personal portfolio website. My current portfolio website",
           githubLink: "https://github.com/muhammad-zulfikar/portfolio",
-        },
-        {
-          title: "muhammad-zulfikar.github.io",
-          windowId: "zulfikarfileserverWindow",
-          iframeSrc:"/files/projects/webdev/zulfikarfileserver.png",
-          tags: ["Javascript"],
-          desc:
-            "zulfikar's personal desktop, now in windows 98",
-          githubLink: "https://github.com/muhammad-zulfikar/muhammad-zulfikar.github.io",
-        },
-        {
-          title: "VS Code Portfolio",
-          windowId: "vscodeportfolioWindow",
-          iframeSrc:"/files/projects/webdev/vscodeportfolio.png",
-          tags: ["React", "Typescript", "GitHub Pages"],
-          desc:
-            "A VS Code themed personal portfolio website. My old portfolio website",
-          githubLink: "https://github.com/muhammad-zulfikar/vscode_portfolio",
+          siteLink: "https://muhammad-zulfikar.web.app"
         },
         {
           title: "Landing Page",
-          windowId: "landingpageWindow",
-          iframeSrc: "/files/projects/webdev/landingpage.gif",
+          imgSrc: "/files/projects/webdev/landingpage.gif",
           tags: ["HTML", "CSS", "Javascript"],
           desc:
             "A simple landing page with search and sign up/sign in button form",
@@ -181,7 +246,7 @@ export default {
         {
           title: "Charging Control Magisk Module",
           windowId: "",
-          iframeSrc:"/files/projects/other/charge_control.gif",
+          imgSrc:"/files/projects/other/charge_control.gif",
           tags: ["Charge" ,"Shell", "Android", "Terminal"],
           desc:
             "Effective approach to customize and manage the charging current settings for magisk-rooted Android devices.",
@@ -190,7 +255,7 @@ export default {
         {
           title: "Adblock Magisk Module",
           windowId: "",
-          iframeSrc:"/files/projects/other/adblock.gif",
+          imgSrc:"/files/projects/other/adblock.gif",
           tags: ["Adblock", "Shell", "Android", "Terminal"],
           desc:
             "Simple and effective adblock module written in Shell for Magisk that blocks ads system-wide on magisk-rooted Android devices.",
@@ -213,14 +278,7 @@ export default {
       }
       return imagePath;
     },
-    openWindow(windowId) {
-      const payload = {
-        windowState: "open",
-        windowID: windowId,
-      };
-      this.$store.commit("setWindowState", payload);
-    },
-    redirectToGitHub(githubLink) {
+    redirect(githubLink) {
       window.open(githubLink, "_blank");
     },
   }
@@ -317,8 +375,7 @@ export default {
   color: inherit;
   font-weight: bold;
   font-size: 16px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .img {
@@ -375,7 +432,7 @@ iframe {
   font-size: 15px;
   line-height: 1.3;
   text-align: center;
-  padding: 30px;
+  margin: 15px 0 0 0;
 }
 
 .link {

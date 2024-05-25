@@ -7,24 +7,24 @@
     </div>
     <hr>
 
-    <div class="content" v-for="(certification, index) in certifications" :key="index">
-      <a class="title" :href="certification.link" target="_blank">
-        {{ certification.title }}
-      </a>
-      <a :href="certification.link" target="_blank">
-        <img class="img" :src="getImageSrc(certification.image)">
-      </a>
-      <div class="tags">
-          <button v-for="(tags, tagIndex) in certification.tags" :key="tagIndex">
+    <div class="content-grid">
+      <div class="content" v-for="(certification, index) in certifications" :key="index">
+        <!-- <a class="title" :href="certification.link" target="_blank">
+          {{ certification.title }}
+        </a> -->
+        <a :href="certification.link" target="_blank">
+          <img class="img" :src="getImageSrc(certification.image)">
+        </a>
+        <div class="tags">
+          <!-- <button v-for="(tags, tagIndex) in certification.tags" :key="tagIndex">
             <label>{{ tags }}</label>
-          </button>
+          </button> -->
+        </div>
+        <!-- <ul class="desc">
+          <li>Issued on: {{ certification.issuedOn }}</li>
+          <li>Provided by: {{ certification.provider }}</li>
+        </ul> -->
       </div>
-
-      <ul class="desc">
-        <li>Issued on: {{ certification.issuedOn }}</li>
-        <li>Provided by: {{ certification.provider }}</li>
-      </ul>
-      <hr>
     </div>
   </div>
 </template>
@@ -43,12 +43,28 @@ export default {
       headerSubtitle: 'A complete lists of my certifications and achievements',
       certifications: [
         {
+          title: "Harvard CS50's Introduction to Computer Science",          
+          link: "https://certificates.cs50.io/c6025ee5-091e-417d-9c8b-990fda2cf013.pdf?size=A4",
+          image: "CS50x.png",
+          tags: ["Computer Science", "Python", "SQL", "Web Development"],
+          issuedOn: "23 May 2024",
+          provider: "Harvard University",
+        },
+        {
           title: "ASEAN Data Science Explorers - SAP Analytics Cloud and SAP Build Apps",          
           link: "https://drive.google.com/drive/u/1/folders/1_TCR0rEdvz8IMF-_N2GOIGstJTjI5iQb",
           image: "asean_dsi_sap.jpg",
           tags: ["SAP Analytics Cloud", "SAP Build Apps", "Data Science"],
           issuedOn: "28 April 2024",
           provider: "ASEAN Foundation with Dampak Sosial Indonesia",
+        },
+        {
+          title: "Dicoding Machine Learning",          
+          link: "https://www.dicoding.com/certificates/4EXGQKRMDZRL",
+          image: "dicoding_machine_learning.jpg",
+          tags: ["Machine Learning", "Python"],
+          issuedOn: "23 May 2024",
+          provider: "Dicoding",
         },
         {
           title: "United Nations Sustainable Development Cooperation Framework",          
@@ -133,7 +149,6 @@ export default {
 </script>
 
 <style scoped>
-
 /* Global */
 .header,
 .content {
@@ -155,7 +170,7 @@ export default {
   padding-bottom: 20px;
 }
 
-.header-title{
+.header-title {
   text-align: center;
   font-weight: bold;
 }
@@ -167,20 +182,37 @@ export default {
   padding-top: 10px;
 }
 
+/* Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+
 /* Content */
 .title {
   text-align: center;
   font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .img {
-  width: 80%;
-  height: 80%;
+  width: 300px;
+  height: 150px;
+  max-width: 200px;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 20px;
-  padding: 5px 5px;
+  margin-top: 10px;
+  padding: 5px;
   border: 4px solid white;
   background: rgb(189, 190, 189);
   border-top: solid rgb(250, 250, 250) 4px;
@@ -195,6 +227,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  margin-top: 10px;
 }
 
 .tags button {
@@ -203,7 +236,7 @@ export default {
   padding: 5px;
   padding-bottom: 2.5px;
   height: 25px;
-  margin: 10px 5px 2px 5px;
+  margin: 5px;
   width: auto;
   border: 2px solid white;
   background: rgb(189, 190, 189);
@@ -220,23 +253,10 @@ export default {
   padding-left: 3px;
 }
 
-.content a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
-}
-
 .desc {
   font-size: 15px;
   line-height: 1.3;
   padding: 10px 0 20px 0;
-  text-align: center;
 }
 
 .desc li {
@@ -251,5 +271,4 @@ h4 {
   padding: 0;
   margin: 0;
 }
-
 </style>

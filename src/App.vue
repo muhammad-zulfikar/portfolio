@@ -62,14 +62,7 @@ import Skills from "./components/views/Skills";
 import Mail from "./components/views/Mail";
 
 // Projects
-import CS50X from "./components/windows/projects/cs50x/cs50x";
-import IDX from "./components/windows/projects/data_analysis/idx";
 import Quantium from "./components/windows/projects/data_analysis/quantium";
-import Win95Portfolio from "./components/windows/projects/webdev/win95portfolio";
-import ZulfikarFileServer from "./components/windows/projects/webdev/zulfikarfileserver";
-import VSCodePortfolio from "./components/windows/projects/webdev/vscodeportfolio";
-import LandingPage from "./components/windows/projects/webdev/landingpage";
-
 
 // Vue component definition
 export default {
@@ -104,13 +97,7 @@ export default {
     Educations,
     Experiences,
     Skills,
-    CS50X,
-    IDX,
     Quantium,
-    Win95Portfolio,
-    ZulfikarFileServer,
-    VSCodePortfolio,
-    LandingPage,
   },
 
   computed: {
