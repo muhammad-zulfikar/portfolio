@@ -1,31 +1,48 @@
 <template>
-  <interact draggable :dragOption="dragOption" resizable :resizeOption="resizeOption" class="window window-style"
-    :style="style" @dragmove="dragmove" @resizemove="resizemove" @click.native="setActiveWindow" :class="{
-    fullscreen: $store.getters.getWindowFullscreen(this.ComponentName),
-    minimize:
-      $store.getters.getWindowById(ComponentName).windowState == 'minimize',
-  }">
-    <div class="top-bar-window" :class="$store.getters.getActiveWindow == this.ComponentName
-      ? 'top-bar'
-      : 'top-bar-deactivated'
-    " id="top-bar" @dblclick="toggleWindowSize">
+  <interact
+    draggable
+    :dragOption="dragOption"
+    resizable
+    :resizeOption="resizeOption"
+    class="window window-style"
+    :style="style"
+    @dragmove="dragmove"
+    @resizemove="resizemove"
+    @click.native="setActiveWindow"
+    :class="{
+      fullscreen: $store.getters.getWindowFullscreen(this.ComponentName),
+      minimize:
+        $store.getters.getWindowById(ComponentName).windowState == 'minimize',
+    }"
+  >
+    <div
+      class="top-bar-window"
+      :class="
+        $store.getters.getActiveWindow == this.ComponentName
+          ? 'top-bar'
+          : 'top-bar-deactivated'
+      "
+      id="top-bar"
+      @dblclick="toggleWindowSize"
+    >
       <div class="window-name">
-        <img class="icon-image" :src="require('@/assets/icons/win95/' + this.window.iconImage)"
-          :alt="window.altText" />{{ this.window.displayName }}
+        <img
+          class="icon-image"
+          :src="require('@/assets/icons/win95/' + this.window.iconImage)"
+          :alt="window.altText"
+        />{{ this.window.displayName }}
       </div>
       <!-- <div class="window-name">{{this.window.displayName}}</div> -->
       <div class="triple-button">
         <button class="minimize-button button" @click="minimizeWindow">
-          <span style="
-              height: 2px;
-              width: 6px;
-              background: black;
-              margin-top: 8px;
-            ">
+          <span
+            style="height: 2px; width: 6px; background: black; margin-top: 8px"
+          >
           </span>
         </button>
         <button class="expand-button button" @click="toggleWindowSize">
-          <span style="
+          <span
+            style="
               height: 8px;
               width: 9px;
               border-left: black 1px solid;
@@ -33,10 +50,15 @@
               border-left: black 1px solid;
               border-bottom: black 1px solid;
               border-top: black 2px solid;
-            ">
+            "
+          >
           </span>
         </button>
-        <button class="close-button button" style="margin-right: 3px;" @click="closeWindow">
+        <button
+          class="close-button button"
+          style="margin-right: 3px"
+          @click="closeWindow"
+        >
           <label>×</label>
         </button>
       </div>
@@ -136,11 +158,11 @@
 }
 
 button {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 button span {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 button label {
@@ -150,7 +172,7 @@ button label {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 </style>
 
@@ -200,11 +222,11 @@ export default {
         margin: 10,
         modifiers: [
           interact.modifiers.restrictSize({
-            min: { width: 20 * window.innerWidth / 100 },
+            min: { width: (20 * window.innerWidth) / 100 },
           }),
           interact.modifiers.restrictRect({
             restriction: "#screen",
-          })
+          }),
         ],
       },
       dragOption: {
@@ -244,8 +266,8 @@ export default {
   },
   mounted() {
     // Set initial dimensions
-    this.w = 50 * window.innerWidth / 100;
-    this.h = 80 * window.innerHeight / 100;
+    this.w = (50 * window.innerWidth) / 100;
+    this.h = (80 * window.innerHeight) / 100;
   },
   methods: {
     // functions to interact with window state

@@ -10,7 +10,7 @@
           : 'start-menu'
       "
     >
-    <div
+      <div
         class=""
         :class="
           $store.getters.getActiveWindow == 'Menu'
@@ -19,14 +19,24 @@
         "
       >
         <img class="start-icon" src="@/assets/icons/win95/win95.png" />
-        <button style="padding-left: 3px; padding-top: 4.5px; font-size: 0.9rem; font-weight: bold">
+        <button
+          style="
+            padding-left: 3px;
+            padding-top: 4.5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+          "
+        >
           <label>Start</label>
         </button>
       </div>
     </div>
     <div v-for="window in this.activeWindows" :key="window.key">
       <button
-        v-if="$store.getters.getActiveWindow !== window.windowId && (window.windowState == 'open' || window.windowState == 'minimize')"
+        v-if="
+          $store.getters.getActiveWindow !== window.windowId &&
+          (window.windowState == 'open' || window.windowState == 'minimize')
+        "
         v-on:click="openWindow(window.windowId)"
         class="navbar-item open"
       >
@@ -84,10 +94,10 @@ export default {
   methods: {
     toggleStartMenu() {
       const activeWindowId = this.$store.getters.getActiveWindow;
-      if (activeWindowId === 'Menu') {
+      if (activeWindowId === "Menu") {
         this.$store.commit("setActiveWindow", null);
       } else {
-        this.$store.commit("setActiveWindow", 'Menu');
+        this.$store.commit("setActiveWindow", "Menu");
       }
     },
     openWindow(windowId) {
@@ -117,7 +127,6 @@ export default {
 </script>
 
 <style scoped>
-
 /* Container */
 .navbar-container {
   width: 100%;
@@ -163,7 +172,7 @@ export default {
 }
 
 .navbar-item:hover {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .navbar-item-depressed {
@@ -191,10 +200,11 @@ export default {
   border-left: solid rgb(0, 0, 0) 1.5px;
   border-bottom: solid rgb(250, 250, 250) 1.5px;
   border-right: solid rgb(250, 250, 250) 1.5px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
-.navbar-item img, .navbar-item-depressed img {
+.navbar-item img,
+.navbar-item-depressed img {
   margin-top: 5px;
 }
 
@@ -219,7 +229,7 @@ export default {
 }
 
 .start-menu:hover {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .start-menu:active {
@@ -250,11 +260,15 @@ export default {
   align-items: center;
 }
 
-button, img, p, label {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+button,
+img,
+p,
+label {
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
-.navbar-item p, .navbar-item-depressed p {
+.navbar-item p,
+.navbar-item-depressed p {
   margin-top: 3px;
 }
 

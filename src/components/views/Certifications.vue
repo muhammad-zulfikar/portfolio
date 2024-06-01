@@ -1,19 +1,27 @@
 <template>
   <div>
     <div v-if="!hideHeader" class="header">
-      <img class="header-img" :src="getImageSrc('certifications.png', true)" alt="Certifications Image">
+      <img
+        class="header-img"
+        :src="getImageSrc('certifications.png', true)"
+        alt="Certifications Image"
+      />
       <h3 class="header-title">{{ headerTitle }}</h3>
       <h4 class="header-subtitle">{{ headerSubtitle }}</h4>
     </div>
-    <hr>
+    <hr />
 
     <div class="content-grid">
-      <div class="content" v-for="(certification, index) in certifications" :key="index">
+      <div
+        class="content"
+        v-for="(certification, index) in certifications"
+        :key="index"
+      >
         <!-- <a class="title" :href="certification.link" target="_blank">
           {{ certification.title }}
         </a> -->
         <a :href="certification.link" target="_blank">
-          <img class="img" :src="getImageSrc(certification.image)">
+          <img class="img" :src="getImageSrc(certification.image)" />
         </a>
         <div class="tags">
           <!-- <button v-for="(tags, tagIndex) in certification.tags" :key="tagIndex">
@@ -39,11 +47,11 @@ export default {
   },
   data() {
     return {
-      headerTitle: 'Certifications',
-      headerSubtitle: 'A complete lists of my certifications and achievements',
+      headerTitle: "Certifications",
+      headerSubtitle: "A complete lists of my certifications and achievements",
       certifications: [
         {
-          title: "Harvard CS50's Introduction to Computer Science",          
+          title: "Harvard CS50's Introduction to Computer Science",
           link: "https://certificates.cs50.io/c6025ee5-091e-417d-9c8b-990fda2cf013.pdf?size=A4",
           image: "CS50x.png",
           tags: ["Computer Science", "Python", "SQL", "Web Development"],
@@ -51,7 +59,8 @@ export default {
           provider: "Harvard University",
         },
         {
-          title: "ASEAN Data Science Explorers - SAP Analytics Cloud and SAP Build Apps",          
+          title:
+            "ASEAN Data Science Explorers - SAP Analytics Cloud and SAP Build Apps",
           link: "https://drive.google.com/drive/u/1/folders/1_TCR0rEdvz8IMF-_N2GOIGstJTjI5iQb",
           image: "asean_dsi_sap.jpg",
           tags: ["SAP Analytics Cloud", "SAP Build Apps", "Data Science"],
@@ -59,7 +68,7 @@ export default {
           provider: "ASEAN Foundation with Dampak Sosial Indonesia",
         },
         {
-          title: "Dicoding Machine Learning",          
+          title: "Dicoding Machine Learning",
           link: "https://www.dicoding.com/certificates/4EXGQKRMDZRL",
           image: "dicoding_machine_learning.jpg",
           tags: ["Machine Learning", "Python"],
@@ -67,7 +76,7 @@ export default {
           provider: "Dicoding",
         },
         {
-          title: "United Nations Sustainable Development Cooperation Framework",          
+          title: "United Nations Sustainable Development Cooperation Framework",
           link: "https://elounge.unssc.org/pluginfile.php/1/tool_certificate/issues/1712421531/5492837497MZ.pdf",
           image: "unssc_unsdg.jpg",
           tags: ["SDGs"],
@@ -75,23 +84,37 @@ export default {
           provider: "United Nations System Staff College",
         },
         {
-          title: "Google Data Analytics Professional Certificate: Ask Questions to Make Data-Driven Decisions",          
+          title:
+            "Google Data Analytics Professional Certificate: Ask Questions to Make Data-Driven Decisions",
           link: "https://www.coursera.org/account/accomplishments/certificate/6S3KNB846ZVD",
           image: "google_data_analytics_2.jpg",
-          tags: ["Decision-Making", "Spreadsheet", "Data Analysis", "Problem Solving", "Questioning"],
+          tags: [
+            "Decision-Making",
+            "Spreadsheet",
+            "Data Analysis",
+            "Problem Solving",
+            "Questioning",
+          ],
           issuedOn: "27 March 2024",
           provider: "Google via Coursera",
         },
         {
-          title: "Google Data Analytics Professional Certificate: Foundations: Data, Data, Everywhere",          
+          title:
+            "Google Data Analytics Professional Certificate: Foundations: Data, Data, Everywhere",
           link: "https://www.coursera.org/account/accomplishments/certificate/ZD6SV8G3NYAZ",
           image: "google_data_analytics_1.jpg",
-          tags: ["Data Analysis", "Spreadsheets", "SQL", "Data Visualization", "Data Cleansing"],
+          tags: [
+            "Data Analysis",
+            "Spreadsheets",
+            "SQL",
+            "Data Visualization",
+            "Data Cleansing",
+          ],
           issuedOn: "22 February 2024",
           provider: "Google via Coursera",
         },
         {
-          title: "Quantium Data Analytics",          
+          title: "Quantium Data Analytics",
           link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Quantium/NkaC7knWtjSbi6aYv_Quantium_sM6Z5cnDfc8rFEisk_1707704930422_completion_certificate.pdf",
           image: "quantium_data_analytics.jpg",
           tags: ["Data Analysis", "Statistics", "Python", "PowerBI"],
@@ -99,7 +122,7 @@ export default {
           provider: "Quantium via Forage",
         },
         {
-          title: "Microsoft Azure Data Fundamentals",          
+          title: "Microsoft Azure Data Fundamentals",
           link: "https://drive.google.com/file/d/1HXMmTrM1kXqXYI9NAx0GpFKbk16oIJLD/view?usp=drive_link",
           image: "microsoft_azure_data_fundamentals.jpg",
           tags: ["Microsoft Azure", "Data"],
@@ -107,7 +130,7 @@ export default {
           provider: "Microsoft, Kartu Prakerja, Mereka, Talenta AI",
         },
         {
-          title: "Data Analysis with Python",          
+          title: "Data Analysis with Python",
           link: "https://courses.cognitiveclass.ai/certificates/d152e0cd3be24491a07eda6a40031639",
           image: "ibm_data_analysis_with_python.jpg",
           tags: ["Data Analysis", "Python", "Jupyter Notebook"],
@@ -115,18 +138,29 @@ export default {
           provider: "IBM via cognitiveclass.ai",
         },
         {
-          title: "Alibaba Cloud Certified Developer",          
+          title: "Alibaba Cloud Certified Developer",
           link: "https://drive.google.com/file/d/1JL1Q7AFkEzySvXr33g_Bc_CCF70a2xNf/view?usp=drive_link",
           image: "alibaba_certified_developer.jpg",
-          tags: ["Cloud Console", "Virtual Machine", "Elastic Compute Service", "Database"],
+          tags: [
+            "Cloud Console",
+            "Virtual Machine",
+            "Elastic Compute Service",
+            "Database",
+          ],
           issuedOn: "11 January 2024",
           provider: "Alibaba Cloud",
-        },        
+        },
         {
-          title: "Introduction to Data Analytics",          
+          title: "Introduction to Data Analytics",
           link: "https://certificates.revou.co/muhammad-zulfikar-certificate-completion-damc22.pdf",
           image: "revou_intro_data_analytics.jpg",
-          tags: ["Data Analytics", "BigQuery", "Tableau", "Python", "Looker Studio"],
+          tags: [
+            "Data Analytics",
+            "BigQuery",
+            "Tableau",
+            "Python",
+            "Looker Studio",
+          ],
           issuedOn: "22 July 2022",
           provider: "RevoU",
         },
@@ -135,15 +169,15 @@ export default {
     };
   },
   methods: {
-  getImageSrc(imageName, isHeaderImage = false) {
-    let imagePath;
-    if (isHeaderImage) {
-      imagePath = require("@/assets/icons/win95/" + imageName);
-    } else {
-      imagePath = require("@/assets/images/certifications/" + imageName);
-    }
-    return imagePath;
-    }
+    getImageSrc(imageName, isHeaderImage = false) {
+      let imagePath;
+      if (isHeaderImage) {
+        imagePath = require("@/assets/icons/win95/" + imageName);
+      } else {
+        imagePath = require("@/assets/images/certifications/" + imageName);
+      }
+      return imagePath;
+    },
   },
 };
 </script>
@@ -219,7 +253,7 @@ export default {
   border-left: solid rgb(250, 250, 250) 4px;
   border-bottom: solid rgb(90, 90, 90) 4px;
   border-right: solid rgb(90, 90, 90) 4px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .tags {

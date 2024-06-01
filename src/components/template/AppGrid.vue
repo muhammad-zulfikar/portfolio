@@ -22,8 +22,9 @@
 </template>
 
 <style scoped>
-
-button, img, p {
+button,
+img,
+p {
   cursor: pointer;
 }
 

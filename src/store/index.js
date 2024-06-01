@@ -297,7 +297,7 @@ export default new Vuex.Store({
         showInNavbar: true,
       },
 
-      // Explorer 
+      // Explorer
       {
         windowId: "explorerWindow",
         windowState: "close",
@@ -389,7 +389,6 @@ export default new Vuex.Store({
         showInAppGrid: true,
         showInNavbar: true,
       },
-
     ],
   },
   mutations: {
@@ -487,17 +486,17 @@ export default new Vuex.Store({
     },
 
     setAllWindowsFullscreen(state, fullscreen) {
-      state.windows.forEach(window => {
+      state.windows.forEach((window) => {
         window.fullscreen = fullscreen;
       });
     },
   },
   actions: {
     updateMailSent(context, value) {
-      context.commit('updateMailSent', value);
+      context.commit("updateMailSent", value);
     },
     setAllWindowsFullscreen({ commit }, fullscreen) {
-      commit('setAllWindowsFullscreen', fullscreen);
+      commit("setAllWindowsFullscreen", fullscreen);
     },
   },
   getters: {

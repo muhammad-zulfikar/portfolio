@@ -1,54 +1,77 @@
 <template>
   <div>
     <div v-if="!hideHeader" class="header">
-      <img class="header-img" :src="getImageSrc('projects.png', true)" alt="Projects Image">
+      <img
+        class="header-img"
+        :src="getImageSrc('projects.png', true)"
+        alt="Projects Image"
+      />
       <h3 class="header-title">{{ headerTitle }}</h3>
       <h4 class="header-subtitle" v-html="headerSubtitle"></h4>
     </div>
-    <hr>
+    <hr />
 
     <div class="tabs">
-      <div class="tab" :class="{ 'active-tab first': activeTab === 'featured' }" @click="setActiveTab('featured')">
+      <div
+        class="tab"
+        :class="{ 'active-tab first': activeTab === 'featured' }"
+        @click="setActiveTab('featured')"
+      >
         Featured
       </div>
-      <div class="tab" :class="{ 'active-tab': activeTab === 'data-analysis' }" @click="setActiveTab('data-analysis')">
+      <div
+        class="tab"
+        :class="{ 'active-tab': activeTab === 'data-analysis' }"
+        @click="setActiveTab('data-analysis')"
+      >
         Data & ML
       </div>
-      <div class="tab" :class="{ 'active-tab': activeTab === 'web-dev' }" @click="setActiveTab('web-dev')">
+      <div
+        class="tab"
+        :class="{ 'active-tab': activeTab === 'web-dev' }"
+        @click="setActiveTab('web-dev')"
+      >
         Web Development
       </div>
-      <div class="tab" :class="{ 'active-tab': activeTab === 'others' }" @click="setActiveTab('others')">
+      <div
+        class="tab"
+        :class="{ 'active-tab': activeTab === 'others' }"
+        @click="setActiveTab('others')"
+      >
         Others
       </div>
     </div>
 
-    <div v-if="activeTab === 'featured'" class="content" >
+    <div v-if="activeTab === 'featured'" class="content">
       <div v-for="(featured, index) in featureds" :key="index">
-      <a class="title">
-        {{ featured.title }}
-      </a>
-      <img :src="featured.imgSrc" class="img"></img>
-      <div class="tags">
-        <button v-for="(tags, tagIndex) in featured.tags" :key="tagIndex">
-        <label>{{ tags }}</label>
-        </button>
-      </div>
-      <p class="desc">{{ featured.desc }}</p>
-      <div class="link">
-        <button v-if="featured.showSite" @click="redirect(featured.siteLink)">
-          <img src='@/assets/icons/win95/search.png'>
-          <label>Site</label>
-        </button>
-        <button v-if="featured.showDocumentation" @click="openWindow(featured.windowId)">
-            <img src='@/assets/icons/win95/directory.png'>
+        <a class="title">
+          {{ featured.title }}
+        </a>
+        <img :src="featured.imgSrc" class="img" />
+        <div class="tags">
+          <button v-for="(tags, tagIndex) in featured.tags" :key="tagIndex">
+            <label>{{ tags }}</label>
+          </button>
+        </div>
+        <p class="desc">{{ featured.desc }}</p>
+        <div class="link">
+          <button v-if="featured.showSite" @click="redirect(featured.siteLink)">
+            <img src="@/assets/icons/win95/search.png" />
+            <label>Site</label>
+          </button>
+          <button
+            v-if="featured.showDocumentation"
+            @click="openWindow(featured.windowId)"
+          >
+            <img src="@/assets/icons/win95/directory.png" />
             <label>Documentation</label>
           </button>
-        <button @click="redirect(featured.githubLink)">
-          <img src='@/assets/icons/social/github.png'>
-          <label>GitHub</label>
-        </button>
+          <button @click="redirect(featured.githubLink)">
+            <img src="@/assets/icons/social/github.png" />
+            <label>GitHub</label>
+          </button>
         </div>
-        <hr>
+        <hr />
       </div>
     </div>
 
@@ -57,7 +80,7 @@
         <a class="title">
           {{ data.title }}
         </a>
-        <img :src="data.imgSrc" class="img"></img>
+        <img :src="data.imgSrc" class="img" />
         <div class="tags">
           <button v-for="(tags, tagIndex) in data.tags" :key="tagIndex">
             <label>{{ tags }}</label>
@@ -66,28 +89,31 @@
         <p class="desc">{{ data.desc }}</p>
         <div class="link">
           <button v-if="data.showSite" @click="redirect(data.siteLink)">
-            <img src='@/assets/icons/win95/search.png'>
+            <img src="@/assets/icons/win95/search.png" />
             <label>Site</label>
           </button>
-          <button v-if="data.showDocumentation" @click="openWindow(data.windowId)">
-            <img src='@/assets/icons/win95/directory.png'>
+          <button
+            v-if="data.showDocumentation"
+            @click="openWindow(data.windowId)"
+          >
+            <img src="@/assets/icons/win95/directory.png" />
             <label>Documentation</label>
           </button>
           <button v-if="data.showGitHub" @click="redirect(data.githubLink)">
-            <img src='@/assets/icons/social/github.png'>
+            <img src="@/assets/icons/social/github.png" />
             <label>GitHub</label>
           </button>
         </div>
-        <hr>
+        <hr />
       </div>
     </div>
 
-    <div v-if="activeTab === 'web-dev'" class="content" >
+    <div v-if="activeTab === 'web-dev'" class="content">
       <div v-for="(webdev, index) in webdevs" :key="index">
         <a class="title">
           {{ webdev.title }}
         </a>
-        <img :src="webdev.imgSrc" class="img"></img>
+        <img :src="webdev.imgSrc" class="img" />
         <div class="tags">
           <button v-for="(tags, tagIndex) in webdev.tags" :key="tagIndex">
             <label>{{ tags }}</label>
@@ -96,15 +122,15 @@
         <p class="desc">{{ webdev.desc }}</p>
         <div class="link">
           <button @click="openWindow(webdev.windowId)">
-            <img src='@/assets/icons/win95/search.png'>
+            <img src="@/assets/icons/win95/search.png" />
             <label>Site</label>
           </button>
           <button @click="redirect(webdev.githubLink)">
-            <img src='@/assets/icons/social/github.png'>
+            <img src="@/assets/icons/social/github.png" />
             <label>GitHub</label>
           </button>
         </div>
-        <hr>
+        <hr />
       </div>
     </div>
 
@@ -113,7 +139,7 @@
         <a class="title">
           {{ other.title }}
         </a>
-        <img :src="other.imgSrc" class="img"></img>
+        <img :src="other.imgSrc" class="img" />
         <div class="tags">
           <button v-for="(tags, tagIndex) in other.tags" :key="tagIndex">
             <label>{{ tags }}</label>
@@ -122,14 +148,13 @@
         <p class="desc">{{ other.desc }}</p>
         <div class="link">
           <button @click="redirect(other.githubLink)">
-            <img src='@/assets/icons/social/github.png'>
+            <img src="@/assets/icons/social/github.png" />
             <label>GitHub</label>
           </button>
         </div>
-        <hr>
+        <hr />
       </div>
     </div>
-
   </div>
 </template>
 
@@ -143,15 +168,16 @@ export default {
   },
   data() {
     return {
-      headerTitle: 'Projects',
-      headerSubtitle: 'A complete lists of my projects. You can also see it in <a href="https://github.com/muhammad-zulfikar">GitHub</a>',
-      activeTab: 'featured',
+      headerTitle: "Projects",
+      headerSubtitle:
+        'A complete lists of my projects. You can also see it in <a href="https://github.com/muhammad-zulfikar">GitHub</a>',
+      activeTab: "featured",
       featureds: [
         {
           title: "Retail Analytics at Quantium",
           windowId: "quantiumWindow",
-          imgSrc:"/files/projects/data-analysis/quantium.jpg",
-          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint",],
+          imgSrc: "/files/projects/data-analysis/quantium.jpg",
+          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint"],
           desc: "Analyzed customer and transaction data, conducted uplift testing, and compiled reports with insights.",
           githubLink: "https://github.com/muhammad-zulfikar/quantium",
           showSite: false,
@@ -160,7 +186,7 @@ export default {
         {
           title: "Vue Notes",
           windowId: "win95portfolioWindow",
-          imgSrc:"/files/projects/webdev/vue-notes.png",
+          imgSrc: "/files/projects/webdev/vue-notes.png",
           tags: ["Vue", "Firebase"],
           desc: "Created a Note App as Final Project for the CS50X: Harvard Computer Science Course.",
           githubLink: "https://github.com/muhammad-zulfikar/vue-notes",
@@ -175,8 +201,9 @@ export default {
           imgSrc: "/files/projects/data-analysis/imageClassifier.png",
           tags: ["Machine Learning", "Python"],
           desc: "Developed a Python-based machine learning model to classify hand gesture images as rock, paper, or scissors.",
-          githubLink: "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
-          showGitHub:true
+          githubLink:
+            "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
+          showGitHub: true,
         },
         {
           title: "Sentiment and Bigram Analysis",
@@ -185,9 +212,9 @@ export default {
           tags: ["Web Scraping", "Data Analysis", "R", "RStudio"],
           desc: "Performed sentiment and bigram analysis in RStudio for my Big Data in IR college project. Deployed to GitHub Pages as RMarkdown.",
           githubLink: "https://github.com/muhammad-zulfikar/bigdata",
-          showGitHub:true,
+          showGitHub: true,
           siteLink: "https://muhammad-zulfikar.github.io/bigdata",
-          showSite: true
+          showSite: true,
         },
         {
           title: "ASEAN COVID-19 Statistics",
@@ -195,16 +222,17 @@ export default {
           imgSrc: "/files/projects/data-analysis/aseanCovidStatistics.jpg",
           tags: ["SAP Analytics Cloud", "Data Visualization"],
           desc: "Created an interactive visualization in SAP Analytics Cloud to display the COVID-19 statistics for ASEAN countries",
-          githubLink: "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
+          githubLink:
+            "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
         },
         {
           title: "Retail Analytics at Quantium",
           windowId: "quantiumWindow",
           imgSrc: "/files/projects/data-analysis/quantium.jpg",
-          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint",],
+          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint"],
           desc: "Analyzed customer and transaction data, conducted uplift testing, and compiled reports with insights.",
           githubLink: "https://github.com/muhammad-zulfikar/quantium",
-          showGitHub:true,
+          showGitHub: true,
           showDocumentation: true,
         },
         {
@@ -213,15 +241,16 @@ export default {
           imgSrc: "/files/projects/data-analysis/idx.png",
           tags: ["Machine Learning", "Python", "Data Visualization"],
           desc: "Analyze loan data from ID/X Partners, visualize trends, and build a predictive model for loan approval or rejection.",
-          githubLink: "https://github.com/muhammad-zulfikar/idxpartners_finalproject",
-          showGitHub:true
+          githubLink:
+            "https://github.com/muhammad-zulfikar/idxpartners_finalproject",
+          showGitHub: true,
         },
         // Add more projects here
       ],
       webdevs: [
         {
           title: "Vue Notes",
-          imgSrc:"/files/projects/webdev/vue-notes.png",
+          imgSrc: "/files/projects/webdev/vue-notes.png",
           tags: ["Vue", "Firebase"],
           desc: "Created a Note App as Final Project for the CS50X: Harvard Computer Science Course.",
           githubLink: "https://github.com/muhammad-zulfikar/vue-notes",
@@ -229,21 +258,18 @@ export default {
         },
         {
           title: "Windows 95 Portfolio (This Website)",
-          imgSrc:"/files/projects/webdev/win95portfolio.png",
+          imgSrc: "/files/projects/webdev/win95portfolio.png",
           tags: ["Vue", "Firebase"],
-          desc:
-            "A Windows 95 themed personal portfolio website. My current portfolio website",
+          desc: "A Windows 95 themed personal portfolio website. My current portfolio website",
           githubLink: "https://github.com/muhammad-zulfikar/portfolio",
-          siteLink: "https://muhammad-zulfikar.web.app"
+          siteLink: "https://muhammad-zulfikar.web.app",
         },
         {
           title: "Landing Page",
           imgSrc: "/files/projects/webdev/landingpage.gif",
           tags: ["HTML", "CSS", "Javascript"],
-          desc:
-            "A simple landing page with search and sign up/sign in button form",
-          githubLink:
-            "https://github.com/muhammad-zulfikar/landing_page",
+          desc: "A simple landing page with search and sign up/sign in button form",
+          githubLink: "https://github.com/muhammad-zulfikar/landing_page",
         },
         // Add more projects here
       ],
@@ -251,20 +277,20 @@ export default {
         {
           title: "Charging Control Magisk Module",
           windowId: "",
-          imgSrc:"/files/projects/other/charge_control.gif",
-          tags: ["Charge" ,"Shell", "Android", "Terminal"],
-          desc:
-            "Effective approach to customize and manage the charging current settings for magisk-rooted Android devices.",
-          githubLink: "https://github.com/muhammad-zulfikar/charge_control_magisk",
+          imgSrc: "/files/projects/other/charge_control.gif",
+          tags: ["Charge", "Shell", "Android", "Terminal"],
+          desc: "Effective approach to customize and manage the charging current settings for magisk-rooted Android devices.",
+          githubLink:
+            "https://github.com/muhammad-zulfikar/charge_control_magisk",
         },
         {
           title: "Adblock Magisk Module",
           windowId: "",
-          imgSrc:"/files/projects/other/adblock.gif",
+          imgSrc: "/files/projects/other/adblock.gif",
           tags: ["Adblock", "Shell", "Android", "Terminal"],
-          desc:
-            "Simple and effective adblock module written in Shell for Magisk that blocks ads system-wide on magisk-rooted Android devices.",
-          githubLink: "https://github.com/muhammad-zulfikar/adblock_magisk_module",
+          desc: "Simple and effective adblock module written in Shell for Magisk that blocks ads system-wide on magisk-rooted Android devices.",
+          githubLink:
+            "https://github.com/muhammad-zulfikar/adblock_magisk_module",
         },
         // Add more projects here
       ],
@@ -293,7 +319,7 @@ export default {
     redirect(githubLink) {
       window.open(githubLink, "_blank");
     },
-  }
+  },
 };
 </script>
 
@@ -340,9 +366,9 @@ export default {
 }
 
 .tab {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
   padding: 7px 5px 5px 5px;
-  margin-right: .3px;
+  margin-right: 0.3px;
   border-top: solid rgb(250, 250, 250) 3px;
   border-left: solid rgba(250, 250, 250) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
@@ -469,20 +495,20 @@ iframe {
   border-left: solid rgb(250, 250, 250) 1.5px;
   border-bottom: solid rgb(90, 90, 90) 1.5px;
   border-right: solid rgb(90, 90, 90) 1.5px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .link img {
   height: 22px;
   padding-bottom: 2px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .link label {
   padding-top: 2px;
   padding-left: 5px;
   font-size: 13px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .link button:hover {
@@ -499,7 +525,6 @@ h4 {
 
 /* Media query */
 @media screen and (max-width: 1024px) {
-
   /* Tabs */
   .tabs {
     display: flex;
@@ -509,9 +534,9 @@ h4 {
   }
 
   .tab {
-    cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+    cursor: url("@/assets/cursor/pointer.cur"), auto !important;
     padding: 7px 5px 5px 5px;
-    margin-right: .3px;
+    margin-right: 0.3px;
     border-top: solid rgb(250, 250, 250) 2px;
     border-left: solid rgba(250, 250, 250) 2px;
     border-right: solid rgb(90, 90, 90) 2px;
@@ -536,7 +561,7 @@ h4 {
     position: relative;
     z-index: 1;
   }
-  
+
   .desc {
     margin-top: 20px;
     padding: 5px;

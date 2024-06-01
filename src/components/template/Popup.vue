@@ -1,5 +1,5 @@
 <template>
-  <div class="popup" :class="{ 'show': visible }" @transitionend="destroyPopup">
+  <div class="popup" :class="{ show: visible }" @transitionend="destroyPopup">
     {{ message }}
   </div>
 </template>
@@ -8,11 +8,11 @@
 export default {
   props: {
     message: String,
-    timeout: Number
+    timeout: Number,
   },
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
   mounted() {
@@ -28,8 +28,8 @@ export default {
       if (!this.visible) {
         this.$el.parentNode.removeChild(this.$el);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

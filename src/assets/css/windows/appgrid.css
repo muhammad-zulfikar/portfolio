@@ -23,20 +23,20 @@
   align-items: center;
   text-align: center;
   width: 60%;
-  cursor: url('../../cursor/pointer.cur'), auto !important;
+  cursor: url("../../cursor/pointer.cur"), auto !important;
 }
 
 .icon-text {
   color: white;
   margin: 1px;
-  cursor: url('../../cursor/pointer.cur'), auto !important;
+  cursor: url("../../cursor/pointer.cur"), auto !important;
 }
 
 .icon-image {
   width: 30px;
   height: 30px;
   margin-bottom: 5px;
-  cursor: url('../../cursor/pointer.cur'), auto !important;
+  cursor: url("../../cursor/pointer.cur"), auto !important;
 }
 
 .icon:focus .icon-image {

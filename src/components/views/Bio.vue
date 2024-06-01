@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="header">
-      <img class="header-img" :src="getImageSrc('bio.png', true)" alt="Biography Image">
+      <img
+        class="header-img"
+        :src="getImageSrc('bio.png', true)"
+        alt="Biography Image"
+      />
       <h2 class="header-title">{{ headerTitle }}</h2>
       <h4 class="header-subtitle">{{ headerSubtitle }}</h4>
       <h4 class="subheader">{{ subheader }}</h4>
@@ -16,69 +20,98 @@
         <button><label>Web Development</label></button>
       </div>
     </div>
-    <hr>
+    <hr />
 
     <div class="button" id="buttonSection">
-      <button @click="selectContent('about')" :class="{ active: selectedButton === 'about' }">
-        <img src='@/assets/icons/win95/bio.png'>
+      <button
+        @click="selectContent('about')"
+        :class="{ active: selectedButton === 'about' }"
+      >
+        <img src="@/assets/icons/win95/bio.png" />
         <label>About</label>
       </button>
-      <button @click="selectContent('projects')" :class="{ active: selectedButton === 'projects' }"
-        id="projectsSection">
-        <img src='@/assets/icons/win95/projects.png'>
+      <button
+        @click="selectContent('projects')"
+        :class="{ active: selectedButton === 'projects' }"
+        id="projectsSection"
+      >
+        <img src="@/assets/icons/win95/projects.png" />
         <label>Projects</label>
       </button>
-      <button @click="selectContent('skills')" :class="{ active: selectedButton === 'skills' }" id="skillsSection">
-        <img src='@/assets/icons/win95/skills.png'>
+      <button
+        @click="selectContent('skills')"
+        :class="{ active: selectedButton === 'skills' }"
+        id="skillsSection"
+      >
+        <img src="@/assets/icons/win95/skills.png" />
         <label>Skills</label>
       </button>
-      <button @click="selectContent('experiences')" :class="{ active: selectedButton === 'experiences' }"
-        id="experiencesSection">
-        <img src='@/assets/icons/win95/experiences.png'>
+      <button
+        @click="selectContent('experiences')"
+        :class="{ active: selectedButton === 'experiences' }"
+        id="experiencesSection"
+      >
+        <img src="@/assets/icons/win95/experiences.png" />
         <label>Experiences</label>
       </button>
-      <button @click="selectContent('educations')" :class="{ active: selectedButton === 'educations' }"
-        id="educationsSection">
-        <img src='@/assets/icons/win95/educations.png'>
+      <button
+        @click="selectContent('educations')"
+        :class="{ active: selectedButton === 'educations' }"
+        id="educationsSection"
+      >
+        <img src="@/assets/icons/win95/educations.png" />
         <label>Educations</label>
       </button>
-      <button @click="selectContent('certifications')" :class="{ active: selectedButton === 'certifications' }"
-        id="certificationsSection">
-        <img src='@/assets/icons/win95/certifications.png'>
+      <button
+        @click="selectContent('certifications')"
+        :class="{ active: selectedButton === 'certifications' }"
+        id="certificationsSection"
+      >
+        <img src="@/assets/icons/win95/certifications.png" />
         <label>Certifications</label>
       </button>
-      <button @click="selectContent('publications')" :class="{ active: selectedButton === 'publications' }"
-        id="publicationsSection">
-        <img src='@/assets/icons/win95/printer.png'>
+      <button
+        @click="selectContent('publications')"
+        :class="{ active: selectedButton === 'publications' }"
+        id="publicationsSection"
+      >
+        <img src="@/assets/icons/win95/printer.png" />
         <label>Publications</label>
       </button>
       <button @click="openWindow('resumeWindow')">
-        <img src='@/assets/icons/win95/text.png'>
+        <img src="@/assets/icons/win95/text.png" />
         <label>Resume</label>
       </button>
-      <button @click="selectContent('mail')" :class="{ active: selectedButton === 'mail' }" id="mailSection">
-        <img src='@/assets/icons/win95/mail.png'>
+      <button
+        @click="selectContent('mail')"
+        :class="{ active: selectedButton === 'mail' }"
+        id="mailSection"
+      >
+        <img src="@/assets/icons/win95/mail.png" />
         <label>Mail</label>
       </button>
       <button @click="redirectToGitHub">
-        <img src='@/assets/icons/social/github.png'>
+        <img src="@/assets/icons/social/github.png" />
         <label>GitHub</label>
       </button>
     </div>
 
     <div class="content" id="aboutSection" v-if="selectedContent === 'about'">
-      <hr>
+      <hr />
       <p class="desc">
-        Hello there! I'm Zulfikar from Jakarta, a 20-year-old student with a passion
-        for both Data Analytics and International Relations. Currently, I'm in my 4th semester
-        at Universitas Pembangunan Nasional Veteran Jakarta.
+        Hello there! I'm Zulfikar from Jakarta, a 20-year-old student with a
+        passion for both Data Analytics and International Relations. Currently,
+        I'm in my 4th semester at Universitas Pembangunan Nasional Veteran
+        Jakarta.
       </p>
       <p class="desc">
-        Outside of my classes, I like to focus on practical ways to improve what I'm learning.
-        I believe there's more to learning than just textbooks. I particularly enjoy working on
-        Data Analysis and WebDev projects. My objective is to integrate data analytics methodologies with the
-        field of international relations to analyze how countries interact politically, economically,
-        and diplomatically, that can provide evidence-based insights to help make better decisions in global affairs.
+        Outside of my classes, I like to focus on practical ways to improve what
+        I'm learning. I believe there's more to learning than just textbooks. I
+        particularly enjoy working on Data Analysis and WebDev projects. My
+        objective is to integrate data analytics methodologies with the field of
+        international relations to analyze how countries interact politically,
+        economically, and diplomatically, that can provide evidence-based
+        insights to help make better decisions in global affairs.
       </p>
     </div>
 
@@ -109,19 +142,18 @@
     <div class="content" v-else-if="selectedContent === 'mail'">
       <Mail></Mail>
     </div>
-
   </div>
 </template>
 
 <script>
-import Certifications from './Certifications.vue';
-import Educations from './Educations.vue';
-import Experiences from './Experiences.vue';
-import Projects from './Projects.vue';
-import Skills from './Skills.vue';
-import Publications from './Publications.vue';
-import Resume from './Resume.vue';
-import Mail from './Mail.vue'
+import Certifications from "./Certifications.vue";
+import Educations from "./Educations.vue";
+import Experiences from "./Experiences.vue";
+import Projects from "./Projects.vue";
+import Skills from "./Skills.vue";
+import Publications from "./Publications.vue";
+import Resume from "./Resume.vue";
+import Mail from "./Mail.vue";
 
 export default {
   components: {
@@ -137,11 +169,11 @@ export default {
   },
   data() {
     return {
-      headerTitle: 'Muhammad Zulfikar',
-      headerSubtitle: 'Data Analyst | International Relations',
-      subheader: 'Jakarta, Indonesia',
-      selectedContent: 'about',
-      selectedButton: 'about',
+      headerTitle: "Muhammad Zulfikar",
+      headerSubtitle: "Data Analyst | International Relations",
+      subheader: "Jakarta, Indonesia",
+      selectedContent: "about",
+      selectedButton: "about",
     };
   },
   methods: {
@@ -169,11 +201,11 @@ export default {
       this.selectedButton = content;
 
       if (window.innerWidth > 768) {
-        const element = document.getElementById('aboutSection');
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const element = document.getElementById("aboutSection");
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     },
-  }
+  },
 };
 </script>
 
@@ -275,20 +307,20 @@ export default {
   border-left: solid rgb(250, 250, 250) 1.5px;
   border-bottom: solid rgb(90, 90, 90) 1.5px;
   border-right: solid rgb(90, 90, 90) 1.5px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .button button img {
   height: 22px;
   padding-bottom: 2px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .button label {
   padding-top: 2px;
   padding-left: 5px;
   font-size: 13px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .button button:hover {

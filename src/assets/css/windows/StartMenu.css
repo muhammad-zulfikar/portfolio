@@ -1,9 +1,11 @@
 :root {
-    --gray: #C0C0C0;
-    --inset: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
-    --inset__inverse: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey; 
-    --icon-shadow: -1px -1px #dfdfdf, 1px 1px gray;
-    --icon-shadow__active: 1px 1px #dfdfdf, -1px -1px gray;
-    --control-shadow: inset 1px 0px #fff, inset 0px 1px #fff, inset 0 -1px gray, inset -1px 0px grey, -1px 0px gray, 0 -1px gray, 1px 0px #fff, 0px 1px #fff;
-  }
-  
+  --gray: #c0c0c0;
+  --inset: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey,
+    inset 2px 2px #fff;
+  --inset__inverse: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+    inset -2px -2px #dfdfdf, inset 2px 2px grey;
+  --icon-shadow: -1px -1px #dfdfdf, 1px 1px gray;
+  --icon-shadow__active: 1px 1px #dfdfdf, -1px -1px gray;
+  --control-shadow: inset 1px 0px #fff, inset 0px 1px #fff, inset 0 -1px gray,
+    inset -1px 0px grey, -1px 0px gray, 0 -1px gray, 1px 0px #fff, 0px 1px #fff;
+}

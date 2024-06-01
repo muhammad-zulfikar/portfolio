@@ -1,15 +1,31 @@
 <template>
   <div>
     <div v-if="!hideHeader" class="header">
-      <img class="header-img" :src="getImageSrc('skills.png', true)" alt="Skills Image">
+      <img
+        class="header-img"
+        :src="getImageSrc('skills.png', true)"
+        alt="Skills Image"
+      />
       <h3 class="header-title">{{ headerTitle }}</h3>
       <h4 class="header-subtitle">{{ headerSubtitle }}</h4>
     </div>
-    <hr>
+    <hr />
 
     <div class="tabs">
-      <div class="tab" :class="{ 'active-tab first': activeTab === 'technical' }" @click="setActiveTab('technical')">Technical Skills</div>
-      <div class="tab" :class="{ 'active-tab': activeTab === 'soft' }" @click="setActiveTab('soft')">Soft Skills</div>
+      <div
+        class="tab"
+        :class="{ 'active-tab first': activeTab === 'technical' }"
+        @click="setActiveTab('technical')"
+      >
+        Technical Skills
+      </div>
+      <div
+        class="tab"
+        :class="{ 'active-tab': activeTab === 'soft' }"
+        @click="setActiveTab('soft')"
+      >
+        Soft Skills
+      </div>
     </div>
 
     <div v-if="activeTab === 'technical'" class="content">
@@ -18,7 +34,7 @@
           <p class="grid-item">{{ skillCategory.title }}</p>
           <div class="button-container">
             <button v-for="(skill, index) in skillCategory.skills" :key="index">
-              <img :src="getIcon(skill.icon)">
+              <img :src="getIcon(skill.icon)" />
               <label>{{ skill.name }}</label>
             </button>
           </div>
@@ -27,11 +43,11 @@
     </div>
 
     <div v-if="activeTab === 'soft'" class="content">
-        <div class="button-container">
-          <button v-for="(skill, index) in softSkills" :key="index">
-            <label>{{ skill }}</label>
-          </button>
-        </div>
+      <div class="button-container">
+        <button v-for="(skill, index) in softSkills" :key="index">
+          <label>{{ skill }}</label>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -46,11 +62,11 @@ export default {
   },
   data() {
     return {
-      headerTitle: 'Skills',
-      headerSubtitle: 'My Skills and Proficiency',
-      activeTab: 'technical',
+      headerTitle: "Skills",
+      headerSubtitle: "My Skills and Proficiency",
+      activeTab: "technical",
       technicalSkills: [
-      {
+        {
           title: "Data Analysis",
           skills: [
             { name: "Python", icon: "python.png" },
@@ -58,8 +74,8 @@ export default {
             { name: "R", icon: "r.svg" },
             { name: "Jupyter", icon: "jupyter.png" },
             { name: "SQL Server", icon: "mssqlserver.png" },
-            { name: "BigQuery", icon: "bigquery.png" }
-          ]
+            { name: "BigQuery", icon: "bigquery.png" },
+          ],
         },
         {
           title: "Data Visualization",
@@ -68,8 +84,8 @@ export default {
             { name: "Tableau", icon: "tableau.png" },
             { name: "Looker Studio", icon: "lookerstudio.png" },
             { name: "Excel", icon: "excel.png" },
-            { name: "PowerPoint", icon: "powerpoint.png" }
-          ]
+            { name: "PowerPoint", icon: "powerpoint.png" },
+          ],
         },
         {
           title: "Web Development",
@@ -79,8 +95,8 @@ export default {
             { name: "JavaScript", icon: "javascript.png" },
             { name: "React", icon: "react.png" },
             { name: "Vue", icon: "vue.png" },
-            { name: "Firebase", icon: "firebase.png" }
-          ]
+            { name: "Firebase", icon: "firebase.png" },
+          ],
         },
         {
           title: "Research and Analysis",
@@ -88,8 +104,8 @@ export default {
             { name: "Academic Writing", icon: "download.png" },
             { name: "Critical Review", icon: "download.png" },
             { name: "Foreign Policy Analysis", icon: "download.png" },
-            { name: "Technical Reporting", icon: "download.png" }
-          ]
+            { name: "Technical Reporting", icon: "download.png" },
+          ],
         },
         {
           title: "Office Suite",
@@ -97,7 +113,7 @@ export default {
             { name: "Office 365", icon: "office365.png" },
             { name: "Google Workspace", icon: "workspace.png" },
             { name: "LibreOffice", icon: "workspace.png" },
-          ]
+          ],
         },
         {
           title: "Others",
@@ -108,9 +124,9 @@ export default {
             { name: "Linux", icon: "canva.png" },
             { name: "Git", icon: "notion.png" },
             { name: "Notion", icon: "notion.png" },
-            { name: "Canva", icon: "canva.png" }
-          ]
-        }
+            { name: "Canva", icon: "canva.png" },
+          ],
+        },
       ],
       softSkills: [
         "Analytical and Critical Thinking",
@@ -120,8 +136,8 @@ export default {
         "Collaboration and Teamworking.",
         "Presentation and Interview",
         "Time Management",
-        "Adaptability and Flexibility"
-      ]
+        "Adaptability and Flexibility",
+      ],
     };
   },
   methods: {
@@ -140,7 +156,7 @@ export default {
       }
       return imagePath;
     },
-  }
+  },
 };
 </script>
 
@@ -166,7 +182,7 @@ export default {
   padding-bottom: 20px;
 }
 
-.header-title{
+.header-title {
   text-align: center;
   font-weight: bold;
 }
@@ -187,9 +203,9 @@ export default {
 }
 
 .tab {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
   padding: 7px 5px 5px 5px;
-  margin-right: .3px;
+  margin-right: 0.3px;
   border-top: solid rgb(250, 250, 250) 3px;
   border-left: solid rgba(250, 250, 250) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
@@ -233,7 +249,10 @@ export default {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted grid-template-columns */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Adjusted grid-template-columns */
   gap: 10px;
   width: calc(100% - 20px); /* Adjusted width */
   margin: 0 auto 20px auto;
@@ -298,7 +317,7 @@ h4 {
 
 /* Media query */
 @media (max-width: 1024px) {
-    /* Tabs */
+  /* Tabs */
   .tabs {
     display: flex;
     font-size: 13px;
@@ -307,9 +326,9 @@ h4 {
   }
 
   .tab {
-    cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+    cursor: url("@/assets/cursor/pointer.cur"), auto !important;
     padding: 7px 5px 5px 5px;
-    margin-right: .3px;
+    margin-right: 0.3px;
     border-top: solid rgb(250, 250, 250) 2px;
     border-left: solid rgba(250, 250, 250) 2px;
     border-right: solid rgb(90, 90, 90) 2px;
@@ -334,7 +353,7 @@ h4 {
     position: relative;
     z-index: 1;
   }
-  
+
   .grid-container {
     grid-template-columns: 1fr;
   }

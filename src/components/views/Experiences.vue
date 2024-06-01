@@ -1,22 +1,36 @@
 <template>
   <div>
     <div v-if="!hideHeader" class="header">
-      <img class="header-img" :src="getImageSrc('experiences.png', true)" alt="Experiences Image">
+      <img
+        class="header-img"
+        :src="getImageSrc('experiences.png', true)"
+        alt="Experiences Image"
+      />
       <h3 class="header-title">{{ headingTitle }}</h3>
       <h4 class="header-subtitle">{{ headingSubtitle }}</h4>
     </div>
-    <hr>
+    <hr />
 
     <div class="tabs">
-      <div class="tab" :class="{ 'active-tab first': activeTab === 'professional' }"
-        @click="setActiveTab('professional')">
+      <div
+        class="tab"
+        :class="{ 'active-tab first': activeTab === 'professional' }"
+        @click="setActiveTab('professional')"
+      >
         Professional
       </div>
-      <div class="tab" :class="{ 'active-tab': activeTab === 'organizational' }"
-        @click="setActiveTab('organizational')">
+      <div
+        class="tab"
+        :class="{ 'active-tab': activeTab === 'organizational' }"
+        @click="setActiveTab('organizational')"
+      >
         Organizational
       </div>
-      <div class="tab" :class="{ 'active-tab': activeTab === 'volunteer' }" @click="setActiveTab('volunteer')">
+      <div
+        class="tab"
+        :class="{ 'active-tab': activeTab === 'volunteer' }"
+        @click="setActiveTab('volunteer')"
+      >
         Volunteer
       </div>
     </div>
@@ -25,18 +39,26 @@
       <div v-for="(professional, index) in professionals" :key="index">
         <div class="container">
           <div class="title">
-            <img class="img" :src="getImageSrc(professional.image)">
+            <img class="img" :src="getImageSrc(professional.image)" />
             <p class="name">{{ professional.company }}</p>
           </div>
         </div>
         <div class="desc">
-          <p class="role">{{ professional.position }} <span class="year">{{ professional.duration }}</span></p>
+          <p class="role">
+            {{ professional.position }}
+            <span class="year">{{ professional.duration }}</span>
+          </p>
           <!-- <p class="paragraph">{{ professional.description }}</p> -->
           <ul>
-            <li v-for="(responsibility, index) in professional.responsibilities" :key="index">{{ responsibility }}</li>
+            <li
+              v-for="(responsibility, index) in professional.responsibilities"
+              :key="index"
+            >
+              {{ responsibility }}
+            </li>
           </ul>
         </div>
-        <hr>
+        <hr />
       </div>
     </div>
 
@@ -44,19 +66,26 @@
       <div v-for="(organizational, index) in organizationals" :key="index">
         <div class="container">
           <div class="title">
-            <img class="img" :src="getImageSrc(organizational.image)">
+            <img class="img" :src="getImageSrc(organizational.image)" />
             <p class="name">{{ organizational.company }}</p>
           </div>
         </div>
         <div class="desc">
-          <p class="role">{{ organizational.position }} <span class="year">{{ organizational.duration }}</span></p>
+          <p class="role">
+            {{ organizational.position }}
+            <span class="year">{{ organizational.duration }}</span>
+          </p>
           <!-- <p class="paragraph">{{ organizational.description }}</p> -->
           <ul>
-            <li v-for="(responsibility, index) in organizational.responsibilities" :key="index">{{ responsibility }}
+            <li
+              v-for="(responsibility, index) in organizational.responsibilities"
+              :key="index"
+            >
+              {{ responsibility }}
             </li>
           </ul>
         </div>
-        <hr>
+        <hr />
       </div>
     </div>
 
@@ -70,13 +99,21 @@
         </div> -->
         <div class="desc">
           <p class="event">{{ volunteer.event }}</p>
-          <p class="role">{{ volunteer.position }} <span class="year">{{ volunteer.duration }}</span></p>
+          <p class="role">
+            {{ volunteer.position }}
+            <span class="year">{{ volunteer.duration }}</span>
+          </p>
           <!-- <p class="paragraph">{{ volunteer.description }}</p> -->
           <ul>
-            <li v-for="(responsibility, index) in volunteer.responsibilities" :key="index">{{ responsibility }}</li>
+            <li
+              v-for="(responsibility, index) in volunteer.responsibilities"
+              :key="index"
+            >
+              {{ responsibility }}
+            </li>
           </ul>
         </div>
-        <hr>
+        <hr />
       </div>
     </div>
   </div>
@@ -92,21 +129,22 @@ export default {
   },
   data() {
     return {
-      headingTitle: 'Experiences',
-      headingSubtitle: 'My Professional/Organizational Experiences',
-      activeTab: 'professional',
+      headingTitle: "Experiences",
+      headingSubtitle: "My Professional/Organizational Experiences",
+      activeTab: "professional",
       professionals: [
         {
           image: "quantium.png",
           company: "Quantium | Data Science & AI",
           position: "Data Analyst",
           duration: "Dec 2023 - Feb 2024",
-          description: "I recently participated in Quantium's Virtual Internship, and it was incredibly useful to understand what it might be like to participate on a data analyst team at Quantium. I worked on a tasks to conduct analyses on a client's transaction dataset and identify customer purchasing behaviours to generate insights and provide commercial recommendations. I used Python and built my Data Visualisation in PowerBI.",
+          description:
+            "I recently participated in Quantium's Virtual Internship, and it was incredibly useful to understand what it might be like to participate on a data analyst team at Quantium. I worked on a tasks to conduct analyses on a client's transaction dataset and identify customer purchasing behaviours to generate insights and provide commercial recommendations. I used Python and built my Data Visualisation in PowerBI.",
           responsibilities: [
             "Analyzed data from 400,000+ rows across 300 stores, identifying key purchasing behaviors and customer segments.",
             "Implemented experimentation and uplift testing, defined metrics, and assessed sales impact using Python and PowerBI.",
             "Compiled comprehensive client reports, integrating data visualizations, key insights, and actionable recommendations.",
-          ]
+          ],
         },
         // {
         //   image: "idx.png",
@@ -129,13 +167,14 @@ export default {
           company: "SMRC (Saiful Mujani Research and Consulting)",
           position: "Surveyor / Data Collector",
           duration: "Nov 2023",
-          description: "Working as a data collector at SMRC, the national political survey organization, provided me with valuable insights into the field research process. Part of my responsibilities included obtaining the necessary permits from local authorities at various administrative levels, such as subdistrict, urban village, Hamlet, and Neighborhood, to ensure smooth survey operations in designated areas. Additionally, I conducted face-to-face interviews with ten individuals every week to gather their perspectives on their political subjectivity. After collecting this information, I carefully converted it into digital data, ensuring accuracy and ease of analysis. Through this experience, I developed my communication skills while gaining firsthand knowledge of the crucial role data collection plays in informing political research and decision-making processes.",
+          description:
+            "Working as a data collector at SMRC, the national political survey organization, provided me with valuable insights into the field research process. Part of my responsibilities included obtaining the necessary permits from local authorities at various administrative levels, such as subdistrict, urban village, Hamlet, and Neighborhood, to ensure smooth survey operations in designated areas. Additionally, I conducted face-to-face interviews with ten individuals every week to gather their perspectives on their political subjectivity. After collecting this information, I carefully converted it into digital data, ensuring accuracy and ease of analysis. Through this experience, I developed my communication skills while gaining firsthand knowledge of the crucial role data collection plays in informing political research and decision-making processes.",
           responsibilities: [
             "Conducted field research and data collection, obtaining permits from 13 local authorities in Sukatani, Depok.",
             "Interviewed and engaged with 10+ citizens, each answering over 50 questions to promote democratic awareness.",
-            "Organized and digitized 1000+ interview records for subsequent analysis and reporting."
-          ]
-        }
+            "Organized and digitized 1000+ interview records for subsequent analysis and reporting.",
+          ],
+        },
       ],
       organizationals: [
         {
@@ -143,12 +182,13 @@ export default {
           company: "Himpunan Mahasiswa Hubungan Internasional UPNVJ",
           position: "Youth Development Staff",
           duration: "Jan 2022 - Jan 2023",
-          description: "I was part of the Youth Development Department in the Student Association of International Relations at UPNVJ. My role involved helping organize and plan regular tutoring sessions covering academic and non-academic subjects. The goal was to support fellow International Relations students in enhancing their skills and knowledge. Additionally, I contributed to creating a dynamic content plan for social media, highlighting impressive academic projects and creative talents within our faculty.",
+          description:
+            "I was part of the Youth Development Department in the Student Association of International Relations at UPNVJ. My role involved helping organize and plan regular tutoring sessions covering academic and non-academic subjects. The goal was to support fellow International Relations students in enhancing their skills and knowledge. Additionally, I contributed to creating a dynamic content plan for social media, highlighting impressive academic projects and creative talents within our faculty.",
           responsibilities: [
             "Executed over 10 workshops, competitions, and seminars, impacting 50+ students.",
             "Identified and coordinated 10+ experienced student mentors for MUN, academic writing, and debate program.",
-            "Developed a social media content roadmap, promoting collaboration and knowledge-sharing."
-          ]
+            "Developed a social media content roadmap, promoting collaboration and knowledge-sharing.",
+          ],
         },
       ],
       volunteers: [
@@ -158,11 +198,12 @@ export default {
           event: "IREX (International Relations Exhibition) Paper Competition",
           position: "Public Relation",
           duration: "Oct 2022",
-          description: "I formed important partnerships with media outlets and student groups, securing sponsorships and organizing extensive event promotion through digital marketing. I put together a speaker series on academic writing and research, inviting 5 accomplished professionals in academia to lead seminars and workshops for more than 200 undergraduate students from various universities. My role included managing communication between participants, sponsors, speakers, and the media to ensure smooth visibility and information flow.",
+          description:
+            "I formed important partnerships with media outlets and student groups, securing sponsorships and organizing extensive event promotion through digital marketing. I put together a speaker series on academic writing and research, inviting 5 accomplished professionals in academia to lead seminars and workshops for more than 200 undergraduate students from various universities. My role included managing communication between participants, sponsors, speakers, and the media to ensure smooth visibility and information flow.",
           responsibilities: [
             "Secured partnerships with 5+ media outlets and student organizations for event sponsorship and promotion.",
-            "Organized a speaker series featuring 5 professionals, attended by 100+ students."
-          ]
+            "Organized a speaker series featuring 5 professionals, attended by 100+ students.",
+          ],
         },
         {
           image: "himahi.png",
@@ -170,11 +211,12 @@ export default {
           event: "VETAMUN (Veteran Jakarta Model United Nations)",
           position: "Technical Affairs",
           duration: "Sep 2022",
-          description: "I kept four digital platforms, like live streaming and video conferencing, running smoothly all the time. These platforms were used at the same time by participants to recreate the setting of United Nations council chambers. I fixed technical problems and gave technical advice to the organizing committee and speakers. I helped them prepare digitized background guides, multimedia aids, and presentations so they could host, moderate, and represent countries effectively.",
+          description:
+            "I kept four digital platforms, like live streaming and video conferencing, running smoothly all the time. These platforms were used at the same time by participants to recreate the setting of United Nations council chambers. I fixed technical problems and gave technical advice to the organizing committee and speakers. I helped them prepare digitized background guides, multimedia aids, and presentations so they could host, moderate, and represent countries effectively.",
           responsibilities: [
             "Ensured smooth operation of technical equipment and support during a MUN event with 100+ participants, achieving 95% positive feedback from attendees.",
-            "Diagnosed and resolved technical issues, provided technical guidance, and managed multimedia aids."
-          ]
+            "Diagnosed and resolved technical issues, provided technical guidance, and managed multimedia aids.",
+          ],
         },
         {
           image: "himahi.png",
@@ -182,11 +224,12 @@ export default {
           event: "IRONMAN 4.0 (Student Orientation Program)",
           position: "Logistics",
           duration: "Aug 2022",
-          description: "I made sure everything ran smoothly for the HI UPNVJ new student introduction event. This included setting up equipment, distributing materials, and preparing the venue. I helped participants by providing logistical support, answering questions, addressing concerns, and making sure their onboarding experience during the event was seamless.",
+          description:
+            "I made sure everything ran smoothly for the HI UPNVJ new student introduction event. This included setting up equipment, distributing materials, and preparing the venue. I helped participants by providing logistical support, answering questions, addressing concerns, and making sure their onboarding experience during the event was seamless.",
           responsibilities: [
             "Managed equipment setup, material distribution, and venue preparation for a student orientation event with 300+ attendees.",
-            "Provided logistic support, addressed inquiries, and ensured a seamless event experience."
-          ]
+            "Provided logistic support, addressed inquiries, and ensured a seamless event experience.",
+          ],
         },
         {
           image: "himahi.png",
@@ -194,12 +237,13 @@ export default {
           event: "HI VISIT (Study Comparative Program)",
           position: "Event Organizer",
           duration: "Jun - Jul 2022",
-          description: "I arranged and carried out three virtual meetups with international relations organizations from different campuses. I handled the logistics and made sure there were interactive activities. I worked with teams from different areas to create interesting online programs, discussion topics, and opportunities for digital networking. Each meetup had more than 50 virtual attendees. I also helped with effective online communication and outreach strategies, connecting with international relations organizations from various campuses to encourage collaboration and sharing of knowledge among members.",
+          description:
+            "I arranged and carried out three virtual meetups with international relations organizations from different campuses. I handled the logistics and made sure there were interactive activities. I worked with teams from different areas to create interesting online programs, discussion topics, and opportunities for digital networking. Each meetup had more than 50 virtual attendees. I also helped with effective online communication and outreach strategies, connecting with international relations organizations from various campuses to encourage collaboration and sharing of knowledge among members.",
           responsibilities: [
             "Organized and led 3 virtual meetups with IR organizations from another campuses.",
             "Developed online programs and networking opportunities for 50+ attendees per meetup.",
-            " Facilitated communication and outreach, fostering collaboration and exchange of ideas."
-          ]
+            " Facilitated communication and outreach, fostering collaboration and exchange of ideas.",
+          ],
         },
       ],
     };
@@ -217,18 +261,18 @@ export default {
         if (isHeaderImage) {
           imagePath = require("@/assets/icons/win95/" + imageName);
         } else {
-          imagePath = require("@/assets/images/experiences/professional/" + imageName);
+          imagePath = require("@/assets/images/experiences/professional/" +
+            imageName);
         }
       } catch (error) {
-        imagePath = require("@/assets/images/experiences/organizational/" + imageName);
+        imagePath = require("@/assets/images/experiences/organizational/" +
+          imageName);
       }
       return imagePath;
-    }
-
-  }
+    },
+  },
 };
 </script>
-
 
 <style scoped>
 /* Global */
@@ -273,9 +317,9 @@ export default {
 }
 
 .tab {
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
   padding: 7px 5px 5px 5px;
-  margin-right: .3px;
+  margin-right: 0.3px;
   border-top: solid rgb(250, 250, 250) 3px;
   border-left: solid rgba(250, 250, 250) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
@@ -371,7 +415,6 @@ h4 {
 }
 
 @media screen and (max-width: 1024px) {
-
   /* Tabs */
   .tabs {
     display: flex;
@@ -381,9 +424,9 @@ h4 {
   }
 
   .tab {
-    cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+    cursor: url("@/assets/cursor/pointer.cur"), auto !important;
     padding: 7px 5px 5px 5px;
-    margin-right: .3px;
+    margin-right: 0.3px;
     border-top: solid rgb(250, 250, 250) 2px;
     border-left: solid rgba(250, 250, 250) 2px;
     border-right: solid rgb(90, 90, 90) 2px;

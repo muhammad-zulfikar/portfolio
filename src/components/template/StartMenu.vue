@@ -8,82 +8,176 @@
       </div>
       <div class="start-menu__menu">
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/ShutDown.png" alt="Shut Down">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/ShutDown.png"
+            alt="Shut Down"
+          />
           <span class="start-menu__item-text">Shut Down...</span>
         </div>
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/LogOff.png" alt="Log Off">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/LogOff.png"
+            alt="Log Off"
+          />
           <span class="start-menu__item-text">Log Off...</span>
         </div>
         <div class="start-menu__divider"></div>
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/Run.png" alt="Run">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/Run.png"
+            alt="Run"
+          />
           <span class="start-menu__item-text">Run...</span>
         </div>
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/Help.png" alt="Help">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/Help.png"
+            alt="Help"
+          />
           <span class="start-menu__item-text">Help</span>
         </div>
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/Find.png" alt="Find">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/Find.png"
+            alt="Find"
+          />
           <span class="start-menu__item-text">Find</span>
-          <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu" class="start-menu__item-menu-indicator">
+          <img
+            src="@/assets/icons/img/startmenu/MenuIndicator.png"
+            alt="Menu"
+            class="start-menu__item-menu-indicator"
+          />
         </div>
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/Settings.png" alt="Settings">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/Settings.png"
+            alt="Settings"
+          />
           <span class="start-menu__item-text">Settings</span>
-          <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu" class="start-menu__item-menu-indicator">
+          <img
+            src="@/assets/icons/img/startmenu/MenuIndicator.png"
+            alt="Menu"
+            class="start-menu__item-menu-indicator"
+          />
         </div>
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/Documents.png" alt="Documents">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/Documents.png"
+            alt="Documents"
+          />
           <span class="start-menu__item-text">Documents</span>
-          <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu" class="start-menu__item-menu-indicator">
+          <img
+            src="@/assets/icons/img/startmenu/MenuIndicator.png"
+            alt="Menu"
+            class="start-menu__item-menu-indicator"
+          />
           <div class="start-menu__submenu-container">
             <div class="start-menu__submenu">
               <div class="start-menu__submenu-item">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/img/startmenu/SubFolder.png" alt="SubFolder">
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/img/startmenu/SubFolder.png"
+                  alt="SubFolder"
+                />
                 <span>Contact Info</span>
-                <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu"
-                  class="start-menu__item-menu-indicator">
+                <img
+                  src="@/assets/icons/img/startmenu/MenuIndicator.png"
+                  alt="Menu"
+                  class="start-menu__item-menu-indicator"
+                />
                 <div class="start-menu__submenu-container">
                   <div class="start-menu__submenu">
-                    <a href="mailto:zulfikawr@gmail.com" target="_blank" rel="noopener">
+                    <a
+                      href="mailto:zulfikawr@gmail.com"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <div class="start-menu__submenu-item">
-                        <img class="start-menu__submenu-icon" src="@/assets/icons/img/taskbar/OutlookExpress.png"
-                          alt="Email">
+                        <img
+                          class="start-menu__submenu-icon"
+                          src="@/assets/icons/img/taskbar/OutlookExpress.png"
+                          alt="Email"
+                        />
                         <span>Email</span>
                       </div>
                     </a>
-                    <a href="https://wa.me/+6285156453730" target="_blank" rel="noopener">
+                    <a
+                      href="https://wa.me/+6285156453730"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <div class="start-menu__submenu-item">
-                        <img class="start-menu__submenu-icon" src="@/assets/icons/social/whatsapp.png" alt="IE">
+                        <img
+                          class="start-menu__submenu-icon"
+                          src="@/assets/icons/social/whatsapp.png"
+                          alt="IE"
+                        />
                         <span>WhatsApp</span>
                       </div>
                     </a>
-                    <a href="https://telegram.com/spookies/" target="_blank" rel="noopener">
+                    <a
+                      href="https://telegram.com/spookies/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <div class="start-menu__submenu-item">
-                        <img class="start-menu__submenu-icon" src="@/assets/icons/social/telegram.png" alt="IE">
+                        <img
+                          class="start-menu__submenu-icon"
+                          src="@/assets/icons/social/telegram.png"
+                          alt="IE"
+                        />
                         <span>Telegram</span>
                       </div>
                     </a>
                   </div>
                 </div>
               </div>
-              <a href="https://github.com/muhammad-zulfikar/" target="_blank" rel="noopener">
+              <a
+                href="https://github.com/muhammad-zulfikar/"
+                target="_blank"
+                rel="noopener"
+              >
                 <div class="start-menu__submenu-item">
-                  <img class="start-menu__submenu-icon" src="@/assets/icons/social/github.png" alt="IE">
+                  <img
+                    class="start-menu__submenu-icon"
+                    src="@/assets/icons/social/github.png"
+                    alt="IE"
+                  />
                   <span>GitHub</span>
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/zulfikar-muhammad" target="_blank" rel="noopener">
+              <a
+                href="https://www.linkedin.com/in/zulfikar-muhammad"
+                target="_blank"
+                rel="noopener"
+              >
                 <div class="start-menu__submenu-item">
-                  <img class="start-menu__submenu-icon" src="@/assets/icons/social/linkedin.png" alt="IE">
+                  <img
+                    class="start-menu__submenu-icon"
+                    src="@/assets/icons/social/linkedin.png"
+                    alt="IE"
+                  />
                   <span>LinkedIn</span>
                 </div>
               </a>
-              <a href="https://www.kaggle.com/zulfikarmuhammad/" target="_blank" rel="noopener">
+              <a
+                href="https://www.kaggle.com/zulfikarmuhammad/"
+                target="_blank"
+                rel="noopener"
+              >
                 <div class="start-menu__submenu-item">
-                  <img class="start-menu__submenu-icon" src="@/assets/icons/social/kaggle.png" alt="IE">
+                  <img
+                    class="start-menu__submenu-icon"
+                    src="@/assets/icons/social/kaggle.png"
+                    alt="IE"
+                  />
                   <span>Kaggle</span>
                 </div>
               </a>
@@ -91,63 +185,155 @@
           </div>
         </div>
         <div class="start-menu__item">
-          <img class="start-menu__icon" src="@/assets/icons/img/startmenu/Programs.png" alt="Programs">
+          <img
+            class="start-menu__icon"
+            src="@/assets/icons/img/startmenu/Programs.png"
+            alt="Programs"
+          />
           <span class="start-menu__item-text">Programs</span>
-          <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu" class="start-menu__item-menu-indicator">
+          <img
+            src="@/assets/icons/img/startmenu/MenuIndicator.png"
+            alt="Menu"
+            class="start-menu__item-menu-indicator"
+          />
           <div class="start-menu__submenu-container">
             <div class="start-menu__submenu">
               <div class="start-menu__submenu-item">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/img/startmenu/SubFolder.png" alt="SubFolder">
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/img/startmenu/SubFolder.png"
+                  alt="SubFolder"
+                />
                 <span>Accessories</span>
-                <img src="@/assets/icons/img/startmenu/MenuIndicator.png" alt="Menu"
-                  class="start-menu__item-menu-indicator">
+                <img
+                  src="@/assets/icons/img/startmenu/MenuIndicator.png"
+                  alt="Menu"
+                  class="start-menu__item-menu-indicator"
+                />
                 <div class="start-menu__submenu-container">
                   <div class="start-menu__submenu">
-                    <div class="start-menu__submenu-item" @click="openWindow('notepadWindow')">
-                      <img class="start-menu__submenu-icon" src="@/assets/icons/win95/notepad.png" alt="Text File">
+                    <div
+                      class="start-menu__submenu-item"
+                      @click="openWindow('notepadWindow')"
+                    >
+                      <img
+                        class="start-menu__submenu-icon"
+                        src="@/assets/icons/win95/notepad.png"
+                        alt="Text File"
+                      />
                       <span>Notepad</span>
                     </div>
-                    <div class="start-menu__submenu-item" @click="openWindow('explorerWindow')">
-                      <img class="start-menu__submenu-icon" src="@/assets/icons/win95/folder.png" alt="Text File">
+                    <div
+                      class="start-menu__submenu-item"
+                      @click="openWindow('explorerWindow')"
+                    >
+                      <img
+                        class="start-menu__submenu-icon"
+                        src="@/assets/icons/win95/folder.png"
+                        alt="Text File"
+                      />
                       <span>Explorer</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('biographyWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/bio.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('biographyWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/bio.png"
+                  alt="Text File"
+                />
                 <span>Biography</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('resumeWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/text.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('resumeWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/text.png"
+                  alt="Text File"
+                />
                 <span>Resume</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('projectsWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/projects.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('projectsWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/projects.png"
+                  alt="Text File"
+                />
                 <span>Projects</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('skillsWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/skills.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('skillsWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/skills.png"
+                  alt="Text File"
+                />
                 <span>Skills</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('experiencesWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/experiences.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('experiencesWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/experiences.png"
+                  alt="Text File"
+                />
                 <span>Experiences</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('educationsWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/educations.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('educationsWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/educations.png"
+                  alt="Text File"
+                />
                 <span>Educations</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('certificationsWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/certifications.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('certificationsWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/certifications.png"
+                  alt="Text File"
+                />
                 <span>Certifications</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('publicationsWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/resume.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('publicationsWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/resume.png"
+                  alt="Text File"
+                />
                 <span>Publications</span>
               </div>
-              <div class="start-menu__submenu-item" @click="openWindow('mailWindow')">
-                <img class="start-menu__submenu-icon" src="@/assets/icons/win95/mail.png" alt="Text File">
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('mailWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/mail.png"
+                  alt="Text File"
+                />
                 <span>Mail</span>
               </div>
             </div>
@@ -184,7 +370,7 @@ export default {
 </script>
 
 <style scoped>
-@import '@/assets/css/windows/StartMenu.css';
+@import "@/assets/css/windows/StartMenu.css";
 
 /* --- START MENU --- */
 /* .start-menu__container {
@@ -251,19 +437,19 @@ export default {
   align-items: center;
   padding: 4px 6px;
   margin: 1px 0;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .start-menu__icon {
   width: 24px;
   height: 24px;
   margin-right: 1rem;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .start-menu__item-text {
   flex-grow: 1;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
   margin-top: 5px;
 }
 
@@ -281,7 +467,7 @@ export default {
   height: 7px;
 }
 
-.start-menu__item:hover>.start-menu__item-menu-indicator {
+.start-menu__item:hover > .start-menu__item-menu-indicator {
   filter: invert();
 }
 
@@ -291,8 +477,7 @@ export default {
   margin: 2px 2px;
 }
 
-
-.start-menu__item>.start-menu__submenu-container>.start-menu__submenu {
+.start-menu__item > .start-menu__submenu-container > .start-menu__submenu {
   top: -8px;
   left: 4px;
 }
@@ -305,8 +490,8 @@ export default {
   pointer-events: none;
 }
 
-.start-menu__item:hover>.start-menu__submenu-container,
-.start-menu__submenu-item:hover>.start-menu__submenu-container {
+.start-menu__item:hover > .start-menu__submenu-container,
+.start-menu__submenu-item:hover > .start-menu__submenu-container {
   opacity: 1;
   pointer-events: initial;
 }
@@ -328,21 +513,21 @@ export default {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
   font-size: 13px;
 }
 
-.start-menu__submenu-item>.start-menu__submenu-icon {
+.start-menu__submenu-item > .start-menu__submenu-icon {
   width: 16px;
   height: 16px;
   margin-right: 8px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
-.start-menu__submenu-item>span {
+.start-menu__submenu-item > span {
   flex-grow: 1;
   margin-top: 5px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .start-menu__submenu-item:hover {

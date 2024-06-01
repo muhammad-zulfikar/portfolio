@@ -3,30 +3,45 @@
     <div class="menu-bar__container">
       <div class="menu-bar__menu">
         <div class="menu-bar__handle"></div>
-        <span class="menu-bar__label">
-          To:
-        </span>
-        <input class="menu-bar__input" type="text" value="zulfikawr@gmail.com" disabled style="cursor: url('@/assets/cursor/cursor.cur'), auto !important;">
+        <span class="menu-bar__label"> To: </span>
+        <input
+          class="menu-bar__input"
+          type="text"
+          value="zulfikawr@gmail.com"
+          disabled
+          style="cursor: url('@/assets/cursor/cursor.cur'), auto !important"
+        />
       </div>
       <div class="menu-bar__hr"></div>
       <div class="menu-bar__menu">
         <div class="menu-bar__handle"></div>
-        <span class="menu-bar__label">
-          CC:
-        </span>
-        <input class="menu-bar__input" type="email" v-model="cc" @input="generateMailto" />
+        <span class="menu-bar__label"> CC: </span>
+        <input
+          class="menu-bar__input"
+          type="email"
+          v-model="cc"
+          @input="generateMailto"
+        />
       </div>
       <div class="menu-bar__hr"></div>
       <div class="menu-bar__menu">
         <div class="menu-bar__handle"></div>
-        <span class="menu-bar__label">
-          Subject:
-        </span>
-        <input class="menu-bar__input" type="text" name="subject" autocomplete="off" v-model="subject"
-          @input="generateMailto" />
+        <span class="menu-bar__label"> Subject: </span>
+        <input
+          class="menu-bar__input"
+          type="text"
+          name="subject"
+          autocomplete="off"
+          v-model="subject"
+          @input="generateMailto"
+        />
       </div>
     </div>
-    <textarea class="email__body" v-model="body" @input="generateMailto"></textarea>
+    <textarea
+      class="email__body"
+      v-model="body"
+      @input="generateMailto"
+    ></textarea>
     <div class="menu-bar__menu">
       <div class="menu-bar__spacer"></div>
       <a :href="mailtoLink" target="_blank" class="button">
@@ -43,39 +58,39 @@
 export default {
   data() {
     return {
-      subject: '',
-      cc: '',
-      body: ''
+      subject: "",
+      cc: "",
+      body: "",
     };
   },
   computed: {
     mailtoLink() {
       const encodedSubject = encodeURIComponent(this.subject);
       const encodedCC = encodeURIComponent(this.cc);
-      const encodedBody = encodeURIComponent(this.body.replace(/\n/g, '\r\n'));
+      const encodedBody = encodeURIComponent(this.body.replace(/\n/g, "\r\n"));
       return `mailto:muhammadzulfikar@duck.com?subject=${encodedSubject}&cc=${encodedCC}&body=${encodedBody}`;
-    }
+    },
   },
   methods: {
     generateMailto() {
       // No need to manually update href, Vue will handle it with the computed property
-    }
+    },
   },
   mounted() {
     // Initial generation of mailto link
     this.generateMailto();
 
     // Attach input event listeners
-    const inputs = this.$el.querySelectorAll('textarea, input');
-    inputs.forEach(input => {
-      input.addEventListener('input', this.generateMailto);
+    const inputs = this.$el.querySelectorAll("textarea, input");
+    inputs.forEach((input) => {
+      input.addEventListener("input", this.generateMailto);
     });
   },
   beforeDestroy() {
     // Remove event listeners to prevent memory leaks
-    const inputs = this.$el.querySelectorAll('textarea, input');
-    inputs.forEach(input => {
-      input.removeEventListener('input', this.generateMailto);
+    const inputs = this.$el.querySelectorAll("textarea, input");
+    inputs.forEach((input) => {
+      input.removeEventListener("input", this.generateMailto);
     });
   },
 };
@@ -127,7 +142,8 @@ export default {
 
 .menu-bar__handle {
   align-self: stretch;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+    inset -2px -2px grey, inset 2px 2px #fff;
   width: 2px;
   min-height: 22px;
   margin: 2px;
@@ -157,22 +173,23 @@ export default {
   min-width: 300px;
 }
 
-input[type=email],
-input[type=password],
-input[type=text] {
+input[type="email"],
+input[type="password"],
+input[type="text"] {
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 0
+  border-radius: 0;
 }
 
-input[type=email],
-input[type=password],
-input[type=text],
+input[type="email"],
+input[type="password"],
+input[type="text"],
 select {
   padding: 3px 4px;
-  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
   background-color: #fff;
   box-sizing: border-box;
   cursor: text !important;
@@ -180,7 +197,8 @@ select {
 
 textarea {
   padding: 3px 4px;
-  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf,
+    inset 2px 2px #0a0a0a;
   background-color: #fff;
   box-sizing: border-box;
   -webkit-appearance: none;
@@ -214,20 +232,20 @@ textarea {
   border-left: solid rgb(250, 250, 250) 1.5px;
   border-bottom: solid rgb(90, 90, 90) 1.5px;
   border-right: solid rgb(90, 90, 90) 1.5px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .button button img {
   height: 22px;
   padding-bottom: 2px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .button label {
   padding-top: 2px;
   padding-left: 5px;
   font-size: 13px;
-  cursor: url('@/assets/cursor/pointer.cur'), auto !important;
+  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .button button:hover {

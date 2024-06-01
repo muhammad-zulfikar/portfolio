@@ -12,22 +12,14 @@
           <p style="margin-top: 2px">Open</p>
         </span>
       </a>
-      <a
-        href="/files/resume.pdf"
-        class="download"
-        style="z-index: 10"
-        download
-      >
+      <a href="/files/resume.pdf" class="download" style="z-index: 10" download>
         <span style="display: flex" class="border">
           <img src="@/assets/icons/win95/download.png" class="icon-image" />
           <p style="margin-top: 2px">Download</p>
         </span>
       </a>
     </nav>
-    <div
-      class="frame"
-      style="z-index: 99"
-    >
+    <div class="frame" style="z-index: 99">
       <iframe
         class="frame"
         src="https://muhammad-zulfikar.github.io/files/documents/resume.pdf"
