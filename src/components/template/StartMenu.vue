@@ -47,7 +47,7 @@
                   class="start-menu__item-menu-indicator">
                 <div class="start-menu__submenu-container">
                   <div class="start-menu__submenu">
-                    <a href="mailto:muhammad-zulfikar@duck.com" target="_blank" rel="noopener">
+                    <a href="mailto:zulfikawr@gmail.com" target="_blank" rel="noopener">
                       <div class="start-menu__submenu-item">
                         <img class="start-menu__submenu-icon" src="@/assets/icons/img/taskbar/OutlookExpress.png"
                           alt="Email">
@@ -75,7 +75,7 @@
                   <span>GitHub</span>
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/muhammad-zulfikar-076a7b227" target="_blank" rel="noopener">
+              <a href="https://www.linkedin.com/in/zulfikar-muhammad" target="_blank" rel="noopener">
                 <div class="start-menu__submenu-item">
                   <img class="start-menu__submenu-icon" src="@/assets/icons/social/linkedin.png" alt="IE">
                   <span>LinkedIn</span>

@@ -39,6 +39,10 @@
           <img src='@/assets/icons/win95/search.png'>
           <label>Site</label>
         </button>
+        <button v-if="featured.showDocumentation" @click="openWindow(featured.windowId)">
+            <img src='@/assets/icons/win95/directory.png'>
+            <label>Documentation</label>
+          </button>
         <button @click="redirect(featured.githubLink)">
           <img src='@/assets/icons/social/github.png'>
           <label>GitHub</label>
@@ -144,6 +148,16 @@ export default {
       activeTab: 'featured',
       featureds: [
         {
+          title: "Retail Analytics at Quantium",
+          windowId: "quantiumWindow",
+          imgSrc:"/files/projects/data-analysis/quantium.jpg",
+          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint",],
+          desc: "Analyzed customer and transaction data, conducted uplift testing, and compiled reports with insights.",
+          githubLink: "https://github.com/muhammad-zulfikar/quantium",
+          showSite: false,
+          showDocumentation: true,
+        },
+        {
           title: "Vue Notes",
           windowId: "win95portfolioWindow",
           imgSrc:"/files/projects/webdev/vue-notes.png",
@@ -152,15 +166,6 @@ export default {
           githubLink: "https://github.com/muhammad-zulfikar/vue-notes",
           siteLink: "https://vue-verse.web.app",
           showSite: true,
-        },
-        {
-          title: "Retail Analytics at Quantium",
-          windowId: "quantiumWindow",
-          imgSrc:"/files/projects/data-analysis/quantium.jpg",
-          tags: ["Data Analysis", "Python", "Power BI", "PowerPoint",],
-          desc: "Analyzed customer and transaction data, conducted uplift testing, and compiled reports with insights.",
-          githubLink: "https://github.com/muhammad-zulfikar/quantium",
-          showSite: false,
         },
       ],
       datas: [
@@ -268,6 +273,13 @@ export default {
   methods: {
     setActiveTab(tab) {
       this.activeTab = tab;
+    },
+    openWindow(windowId) {
+      const payload = {
+        windowState: "open",
+        windowID: windowId,
+      };
+      this.$store.commit("setWindowState", payload);
     },
     getImageSrc(imageName, isHeaderImage = false) {
       let imagePath;

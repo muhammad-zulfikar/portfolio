@@ -146,7 +146,7 @@ export default {
                     title: 'Analytics and Commercial Application',
                     desc: 'The goal is to provide actionable insights and recommendations crucial for developing the strategic plan for the next six months. To achieve this, I followed the "Pyramid Principles" framework for report structure to ensure that everything make sense. I use graphs to support key insights and taglines to highlight important findings.',
                     responsibilities: '',
-                    iframeSource: 'https://muhammad-zulfikar.github.io/files/documents/projects/quantium/quantium_task3.pdf'
+                    iframeSource: 'https://muhammad-zulfikar.github.io/files/documents/projects/quantium/Task%203%20-%20Analytics%20and%20Commercial%20Application%20(2).pdf'
                 },
             ],
         };

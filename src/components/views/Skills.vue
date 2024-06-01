@@ -83,24 +83,44 @@ export default {
           ]
         },
         {
-          title: "Office",
+          title: "Research and Analysis",
+          skills: [
+            { name: "Academic Writing", icon: "download.png" },
+            { name: "Critical Review", icon: "download.png" },
+            { name: "Foreign Policy Analysis", icon: "download.png" },
+            { name: "Technical Reporting", icon: "download.png" }
+          ]
+        },
+        {
+          title: "Office Suite",
           skills: [
             { name: "Office 365", icon: "office365.png" },
             { name: "Google Workspace", icon: "workspace.png" },
+            { name: "LibreOffice", icon: "workspace.png" },
+          ]
+        },
+        {
+          title: "Others",
+          skills: [
+            { name: "Data Collecting", icon: "office365.png" },
+            { name: "Web Scraping", icon: "workspace.png" },
+            { name: "Troubleshooting", icon: "notion.png" },
+            { name: "Linux", icon: "canva.png" },
+            { name: "Git", icon: "notion.png" },
             { name: "Notion", icon: "notion.png" },
             { name: "Canva", icon: "canva.png" }
           ]
         }
       ],
       softSkills: [
-        "Analytical Thinking",
-        "Critical Thinking",
+        "Analytical and Critical Thinking",
+        "Attention to Detail",
         "Problem Solving",
-        "Troubleshooting",
         "Communication",
-        "Collaboration",
-        "Creativity",
-        "Time Management"
+        "Collaboration and Teamworking.",
+        "Presentation and Interview",
+        "Time Management",
+        "Adaptability and Flexibility"
       ]
     };
   },
@@ -203,6 +223,7 @@ export default {
   margin-top: -3px;
   position: relative;
   z-index: 1;
+  overflow: overlay;
 }
 
 .title {
@@ -212,10 +233,11 @@ export default {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted grid-template-columns */
   gap: 10px;
-  width: auto;
-  margin: 0 auto;
+  width: calc(100% - 20px); /* Adjusted width */
+  margin: 0 auto 20px auto;
+  overflow: overlay;
 }
 
 .grid-item {

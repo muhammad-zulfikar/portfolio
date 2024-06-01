@@ -6,7 +6,7 @@
         <span class="menu-bar__label">
           To:
         </span>
-        <input class="menu-bar__input" type="text" value="muhammadzulfikar@duck.com" disabled style="cursor: url('@/assets/cursor/cursor.cur'), auto !important;">
+        <input class="menu-bar__input" type="text" value="zulfikawr@gmail.com" disabled style="cursor: url('@/assets/cursor/cursor.cur'), auto !important;">
       </div>
       <div class="menu-bar__hr"></div>
       <div class="menu-bar__menu">

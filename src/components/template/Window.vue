@@ -197,7 +197,7 @@ export default {
           bottom: true,
           right: true,
         },
-        margin: 8,
+        margin: 10,
         modifiers: [
           interact.modifiers.restrictSize({
             min: { width: 20 * window.innerWidth / 100 },

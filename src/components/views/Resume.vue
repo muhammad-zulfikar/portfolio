@@ -30,7 +30,7 @@
     >
       <iframe
         class="frame"
-        src="https://drive.google.com/file/d/1-_aFBr3pm5nnGWdMDWA39CLNaVi_lCmN/preview"
+        src="https://muhammad-zulfikar.github.io/files/documents/resume.pdf"
       ></iframe>
     </div>
   </div>
