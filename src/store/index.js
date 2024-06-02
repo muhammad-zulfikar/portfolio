@@ -293,7 +293,7 @@ export default new Vuex.Store({
         iconImage: "mail.png",
         altText: "Mail",
         fullscreen: false,
-        showInAppGrid: true,
+        showInAppGrid: false,
         showInNavbar: true,
       },
 

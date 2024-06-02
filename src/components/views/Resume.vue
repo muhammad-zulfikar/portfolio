@@ -7,10 +7,14 @@
         class="download"
         style="z-index: 10"
       >
-        <span style="display: flex" class="border">
-          <img src="@/assets/icons/win95/open.png" class="icon-image" />
+        <div style="display: flex; align-items: center" class="border">
+          <img
+            src="@/assets/icons/win95/open.png"
+            class="icon-image"
+            alt="Open Icon"
+          />
           <p style="margin-top: 2px">Open</p>
-        </span>
+        </div>
       </a>
       <a href="/files/resume.pdf" class="download" style="z-index: 10" download>
         <span style="display: flex" class="border">
@@ -22,7 +26,7 @@
     <div class="frame" style="z-index: 99">
       <iframe
         class="frame"
-        src="https://muhammad-zulfikar.github.io/files/documents/resume.pdf"
+        src="https://drive.google.com/file/d/1nxLDGZr8v6OX75bJKQhV6-BoonxPuPVA/preview"
       ></iframe>
     </div>
   </div>
@@ -70,6 +74,10 @@
   margin-right: 5px;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+p {
+  cursor: url("../../assets/cursor/pointer.cur"), auto !important;
 }
 
 .border {

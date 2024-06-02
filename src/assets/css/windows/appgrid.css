@@ -7,8 +7,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   width: 0;
-  margin-top: 4px;
-  max-height: calc(100vh - 10px);
+  margin-top: 10px;
+  max-height: calc(100vh - 40px);
 }
 
 /*-------------------------------------------*\

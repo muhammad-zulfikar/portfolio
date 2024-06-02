@@ -350,7 +350,7 @@ export default {
   border-bottom: solid rgb(90, 90, 90) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
   padding: 10px;
-  margin-top: -3px;
+  margin-top: -2px;
   position: relative;
   z-index: 1;
 }

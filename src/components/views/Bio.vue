@@ -82,13 +82,9 @@
         <img src="@/assets/icons/win95/text.png" />
         <label>Resume</label>
       </button>
-      <button
-        @click="selectContent('mail')"
-        :class="{ active: selectedButton === 'mail' }"
-        id="mailSection"
-      >
-        <img src="@/assets/icons/win95/mail.png" />
-        <label>Mail</label>
+      <button @click="redirectToLinkedIn">
+        <img src="@/assets/icons/social/linkedin.png" />
+        <label>LinkedIn</label>
       </button>
       <button @click="redirectToGitHub">
         <img src="@/assets/icons/social/github.png" />
@@ -195,6 +191,9 @@ export default {
     },
     redirectToGitHub() {
       window.open("https://github.com/muhammad-zulfikar", "_blank");
+    },
+    redirectToLinkedIn() {
+      window.open("https://linkedin.com/in/zulfikar-muhammad", "_blank");
     },
     selectContent(content) {
       this.selectedContent = content;

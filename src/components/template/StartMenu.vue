@@ -27,7 +27,8 @@
         <div class="start-menu__item">
           <img
             class="start-menu__icon"
-            src="@/assets/icons/img/startmenu/Run.png"
+            src="@/assets/icons
+              <div class="start-menu__submenu">/img/startmenu/Run.png"
             alt="Run"
           />
           <span class="start-menu__item-text">Run...</span>
@@ -70,9 +71,9 @@
           <img
             class="start-menu__icon"
             src="@/assets/icons/img/startmenu/Documents.png"
-            alt="Documents"
+            alt="Contact"
           />
-          <span class="start-menu__item-text">Documents</span>
+          <span class="start-menu__item-text">Contacts</span>
           <img
             src="@/assets/icons/img/startmenu/MenuIndicator.png"
             alt="Menu"
@@ -80,65 +81,48 @@
           />
           <div class="start-menu__submenu-container">
             <div class="start-menu__submenu">
-              <div class="start-menu__submenu-item">
-                <img
-                  class="start-menu__submenu-icon"
-                  src="@/assets/icons/img/startmenu/SubFolder.png"
-                  alt="SubFolder"
-                />
-                <span>Contact Info</span>
-                <img
-                  src="@/assets/icons/img/startmenu/MenuIndicator.png"
-                  alt="Menu"
-                  class="start-menu__item-menu-indicator"
-                />
-                <div class="start-menu__submenu-container">
-                  <div class="start-menu__submenu">
-                    <a
-                      href="mailto:zulfikawr@gmail.com"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <div class="start-menu__submenu-item">
-                        <img
-                          class="start-menu__submenu-icon"
-                          src="@/assets/icons/img/taskbar/OutlookExpress.png"
-                          alt="Email"
-                        />
-                        <span>Email</span>
-                      </div>
-                    </a>
-                    <a
-                      href="https://wa.me/+6285156453730"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <div class="start-menu__submenu-item">
-                        <img
-                          class="start-menu__submenu-icon"
-                          src="@/assets/icons/social/whatsapp.png"
-                          alt="IE"
-                        />
-                        <span>WhatsApp</span>
-                      </div>
-                    </a>
-                    <a
-                      href="https://telegram.com/spookies/"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <div class="start-menu__submenu-item">
-                        <img
-                          class="start-menu__submenu-icon"
-                          src="@/assets/icons/social/telegram.png"
-                          alt="IE"
-                        />
-                        <span>Telegram</span>
-                      </div>
-                    </a>
-                  </div>
+              <a
+                href="mailto:zulfikawr@gmail.com"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="start-menu__submenu-item">
+                  <img
+                    class="start-menu__submenu-icon"
+                    src="@/assets/icons/img/taskbar/OutlookExpress.png"
+                    alt="Email"
+                  />
+                  <span>Email</span>
                 </div>
-              </div>
+              </a>
+              <a
+                href="https://wa.me/+6285156453730"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="start-menu__submenu-item">
+                  <img
+                    class="start-menu__submenu-icon"
+                    src="@/assets/icons/social/whatsapp.png"
+                    alt="IE"
+                  />
+                  <span>WhatsApp</span>
+                </div>
+              </a>
+              <a
+                href="https://telegram.com/spookies/"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="start-menu__submenu-item">
+                  <img
+                    class="start-menu__submenu-icon"
+                    src="@/assets/icons/social/telegram.png"
+                    alt="IE"
+                  />
+                  <span>Telegram</span>
+                </div>
+              </a>
               <a
                 href="https://github.com/muhammad-zulfikar/"
                 target="_blank"
@@ -324,17 +308,6 @@
                   alt="Text File"
                 />
                 <span>Publications</span>
-              </div>
-              <div
-                class="start-menu__submenu-item"
-                @click="openWindow('mailWindow')"
-              >
-                <img
-                  class="start-menu__submenu-icon"
-                  src="@/assets/icons/win95/mail.png"
-                  alt="Text File"
-                />
-                <span>Mail</span>
               </div>
             </div>
           </div>
