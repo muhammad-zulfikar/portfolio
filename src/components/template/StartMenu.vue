@@ -27,8 +27,7 @@
         <div class="start-menu__item">
           <img
             class="start-menu__icon"
-            src="@/assets/icons
-              <div class="start-menu__submenu">/img/startmenu/Run.png"
+            src="@/assets/icons/img/startmenu/Run.png"
             alt="Run"
           />
           <span class="start-menu__item-text">Run...</span>
@@ -71,7 +70,7 @@
           <img
             class="start-menu__icon"
             src="@/assets/icons/img/startmenu/Documents.png"
-            alt="Contact"
+            alt="Contacts"
           />
           <span class="start-menu__item-text">Contacts</span>
           <img
@@ -81,6 +80,20 @@
           />
           <div class="start-menu__submenu-container">
             <div class="start-menu__submenu">
+              <a
+                href="https://linkedin.com/in/zulfikar-muhammad/"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="start-menu__submenu-item">
+                  <img
+                    class="start-menu__submenu-icon"
+                    src="@/assets/icons/social/linkedin.png"
+                    alt="LinkedIn"
+                  />
+                  <span>LinkedIn</span>
+                </div>
+              </a>
               <a
                 href="mailto:zulfikawr@gmail.com"
                 target="_blank"
@@ -96,34 +109,6 @@
                 </div>
               </a>
               <a
-                href="https://wa.me/+6285156453730"
-                target="_blank"
-                rel="noopener"
-              >
-                <div class="start-menu__submenu-item">
-                  <img
-                    class="start-menu__submenu-icon"
-                    src="@/assets/icons/social/whatsapp.png"
-                    alt="IE"
-                  />
-                  <span>WhatsApp</span>
-                </div>
-              </a>
-              <a
-                href="https://telegram.com/spookies/"
-                target="_blank"
-                rel="noopener"
-              >
-                <div class="start-menu__submenu-item">
-                  <img
-                    class="start-menu__submenu-icon"
-                    src="@/assets/icons/social/telegram.png"
-                    alt="IE"
-                  />
-                  <span>Telegram</span>
-                </div>
-              </a>
-              <a
                 href="https://github.com/muhammad-zulfikar/"
                 target="_blank"
                 rel="noopener"
@@ -132,23 +117,23 @@
                   <img
                     class="start-menu__submenu-icon"
                     src="@/assets/icons/social/github.png"
-                    alt="IE"
+                    alt="GitHub"
                   />
                   <span>GitHub</span>
                 </div>
               </a>
               <a
-                href="https://www.linkedin.com/in/zulfikar-muhammad"
+                href="https://wa.me/+6285156453730/"
                 target="_blank"
                 rel="noopener"
               >
                 <div class="start-menu__submenu-item">
                   <img
                     class="start-menu__submenu-icon"
-                    src="@/assets/icons/social/linkedin.png"
-                    alt="IE"
+                    src="@/assets/icons/social/whatsapp.png"
+                    alt="WhatsApp"
                   />
-                  <span>LinkedIn</span>
+                  <span>WhatsApp</span>
                 </div>
               </a>
               <a
@@ -160,7 +145,7 @@
                   <img
                     class="start-menu__submenu-icon"
                     src="@/assets/icons/social/kaggle.png"
-                    alt="IE"
+                    alt="Kaggle"
                   />
                   <span>Kaggle</span>
                 </div>
@@ -182,45 +167,6 @@
           />
           <div class="start-menu__submenu-container">
             <div class="start-menu__submenu">
-              <div class="start-menu__submenu-item">
-                <img
-                  class="start-menu__submenu-icon"
-                  src="@/assets/icons/img/startmenu/SubFolder.png"
-                  alt="SubFolder"
-                />
-                <span>Accessories</span>
-                <img
-                  src="@/assets/icons/img/startmenu/MenuIndicator.png"
-                  alt="Menu"
-                  class="start-menu__item-menu-indicator"
-                />
-                <div class="start-menu__submenu-container">
-                  <div class="start-menu__submenu">
-                    <div
-                      class="start-menu__submenu-item"
-                      @click="openWindow('notepadWindow')"
-                    >
-                      <img
-                        class="start-menu__submenu-icon"
-                        src="@/assets/icons/win95/notepad.png"
-                        alt="Text File"
-                      />
-                      <span>Notepad</span>
-                    </div>
-                    <div
-                      class="start-menu__submenu-item"
-                      @click="openWindow('explorerWindow')"
-                    >
-                      <img
-                        class="start-menu__submenu-icon"
-                        src="@/assets/icons/win95/folder.png"
-                        alt="Text File"
-                      />
-                      <span>Explorer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div
                 class="start-menu__submenu-item"
                 @click="openWindow('biographyWindow')"
@@ -308,6 +254,17 @@
                   alt="Text File"
                 />
                 <span>Publications</span>
+              </div>
+              <div
+                class="start-menu__submenu-item"
+                @click="openWindow('mailWindow')"
+              >
+                <img
+                  class="start-menu__submenu-icon"
+                  src="@/assets/icons/win95/mail.png"
+                  alt="Text File"
+                />
+                <span>Mail</span>
               </div>
             </div>
           </div>

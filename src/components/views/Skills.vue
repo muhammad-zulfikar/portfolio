@@ -112,17 +112,17 @@ export default {
           skills: [
             { name: "Office 365", icon: "office365.png" },
             { name: "Google Workspace", icon: "workspace.png" },
-            { name: "LibreOffice", icon: "workspace.png" },
+            { name: "LibreOffice", icon: "libreoffice.png" },
           ],
         },
         {
           title: "Others",
           skills: [
-            { name: "Data Collecting", icon: "office365.png" },
-            { name: "Web Scraping", icon: "workspace.png" },
-            { name: "Troubleshooting", icon: "notion.png" },
-            { name: "Linux", icon: "canva.png" },
-            { name: "Git", icon: "notion.png" },
+            { name: "Data Collecting", icon: "download.png" },
+            { name: "Web Scraping", icon: "web-scraping.png" },
+            { name: "Troubleshooting", icon: "troubleshooting.png" },
+            { name: "Linux", icon: "linux.png" },
+            { name: "Git", icon: "git.png" },
             { name: "Notion", icon: "notion.png" },
             { name: "Canva", icon: "canva.png" },
           ],
