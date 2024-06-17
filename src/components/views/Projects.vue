@@ -196,7 +196,7 @@ export default {
       datas: [
         {
           title: "Google Scholar PDF Scraper",
-          imgSrc: "",
+          imgSrc: "/files/projects/data-analysis/pdfScraper.png",
           tags: ["R", "Firebase"],
           desc: "R script to scrape PDF files from Google Scholar based on search query, and also stores its metadata.",
           githubLink: "https://github.com/muhammad-zulfikar/googleScholarPdfScraper",
