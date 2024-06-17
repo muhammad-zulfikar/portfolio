@@ -183,43 +183,11 @@ export default {
 </script>
 
 <style scoped>
-/* Global */
-.header,
-.content {
-  padding: 20px 0;
-}
-
-/* Header */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 60px;
-  padding-bottom: 20px;
-}
-
-.header-title {
-  text-align: center;
-  font-weight: bold;
-}
-
-.header-subtitle {
-  font-size: 13px;
-  color: gray;
-  text-align: center;
-  padding-top: 10px;
-}
-
 /* Content Grid */
 .content-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin-inline: 20px;
 }
 
 .content {
@@ -227,7 +195,6 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 15px;
 }
 
 /* Content */
@@ -245,7 +212,6 @@ export default {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 10px;
   padding: 5px;
   border: 4px solid white;
   background: rgb(189, 190, 189);
@@ -296,13 +262,5 @@ export default {
 .desc li {
   text-align: center;
   padding: 2px;
-}
-
-/* Normalize */
-h2,
-h3,
-h4 {
-  padding: 0;
-  margin: 0;
 }
 </style>

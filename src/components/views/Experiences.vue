@@ -290,74 +290,6 @@ export default {
 </script>
 
 <style scoped>
-/* Global */
-.header,
-.content {
-  padding: 20px 0;
-}
-
-/* Header */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 60px;
-  padding-bottom: 20px;
-}
-
-.header-title {
-  text-align: center;
-  font-weight: bold;
-}
-
-.header-subtitle {
-  font-size: 13px;
-  color: gray;
-  text-align: center;
-  padding-top: 10px;
-}
-
-/* Tabs */
-.tabs {
-  display: flex;
-  font-size: 13px;
-  justify-content: left;
-  padding-top: 20px;
-}
-
-.tab {
-  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
-  padding: 7px 5px 5px 5px;
-  margin-right: 0.3px;
-  border-top: solid rgb(250, 250, 250) 3px;
-  border-left: solid rgba(250, 250, 250) 3px;
-  border-right: solid rgb(90, 90, 90) 3px;
-  border-bottom: solid rgb(250, 250, 250) 1px;
-}
-
-.active-tab {
-  font-weight: bold;
-  border-bottom: 5px solid rgb(195, 195, 195);
-  position: relative;
-  z-index: 9999;
-}
-
-.active-tab.first::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  width: 2px;
-  height: calc(100% + 5px);
-  background-color: rgba(250, 250, 250);
-  z-index: 9998;
-}
-
 /* Content */
 .content {
   border-top: solid rgb(250, 250, 250) 3px;
@@ -365,7 +297,7 @@ export default {
   border-bottom: solid rgb(90, 90, 90) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
   padding: 10px;
-  margin-top: -2px;
+  margin-top: -3px;
   position: relative;
   z-index: 1;
 }
@@ -421,40 +353,7 @@ export default {
   margin-bottom: 5px;
 }
 
-/* Normalize */
-h2,
-h3,
-h4 {
-  padding: 0;
-  margin: 0;
-}
-
 @media screen and (max-width: 1024px) {
-  /* Tabs */
-  .tabs {
-    display: flex;
-    font-size: 13px;
-    justify-content: left;
-    padding-top: 20px;
-  }
-
-  .tab {
-    cursor: url("@/assets/cursor/pointer.cur"), auto !important;
-    padding: 7px 5px 5px 5px;
-    margin-right: 0.3px;
-    border-top: solid rgb(250, 250, 250) 2px;
-    border-left: solid rgba(250, 250, 250) 2px;
-    border-right: solid rgb(90, 90, 90) 2px;
-    border-bottom: solid rgb(250, 250, 250) 1px;
-  }
-
-  .active-tab {
-    font-weight: bold;
-    border-bottom: 2px solid rgb(195, 195, 195);
-    position: relative;
-    z-index: 9999;
-  }
-
   /* Content */
   .content {
     border-top: solid rgb(250, 250, 250) 2px;

@@ -121,11 +121,11 @@
         </div>
         <p class="desc">{{ webdev.desc }}</p>
         <div class="link">
-          <button @click="openWindow(webdev.windowId)">
+          <button v-if="webdev.showSite" @click="redirect(webdev.siteLink)">
             <img src="@/assets/icons/win95/search.png" />
             <label>Site</label>
           </button>
-          <button @click="redirect(webdev.githubLink)">
+          <button v-if="webdev.showGitHub" @click="redirect(webdev.githubLink)">
             <img src="@/assets/icons/social/github.png" />
             <label>GitHub</label>
           </button>
@@ -185,7 +185,6 @@ export default {
         },
         {
           title: "Vue Notes",
-          windowId: "win95portfolioWindow",
           imgSrc: "/files/projects/webdev/vue-notes.png",
           tags: ["Vue", "Firebase"],
           desc: "Created a Note App as Final Project for the CS50X: Harvard Computer Science Course.",
@@ -196,13 +195,20 @@ export default {
       ],
       datas: [
         {
+          title: "Google Scholar PDF Scraper",
+          imgSrc: "",
+          tags: ["R", "Firebase"],
+          desc: "R script to scrape PDF files from Google Scholar based on search query, and also stores its metadata.",
+          githubLink: "https://github.com/muhammad-zulfikar/googleScholarPdfScraper",
+          showGitHub: true,
+        },
+        {
           title: "Image Classifier",
           windowId: "",
           imgSrc: "/files/projects/data-analysis/imageClassifier.png",
           tags: ["Machine Learning", "Python"],
           desc: "Developed a Python-based machine learning model to classify hand gesture images as rock, paper, or scissors.",
-          githubLink:
-            "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
+          githubLink: "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
           showGitHub: true,
         },
         {
@@ -218,12 +224,11 @@ export default {
         },
         {
           title: "ASEAN COVID-19 Statistics",
-          windowId: "",
           imgSrc: "/files/projects/data-analysis/aseanCovidStatistics.jpg",
           tags: ["SAP Analytics Cloud", "Data Visualization"],
           desc: "Created an interactive visualization in SAP Analytics Cloud to display the COVID-19 statistics for ASEAN countries",
-          githubLink:
-            "https://github.com/muhammad-zulfikar/dicodingImageClassifier",
+          siteLink: "https://muhammad-zulfikar.github.io/files/documents/projects/aseanDseAseanCovidStatistics/ASEAN%20COVID-19%20Statistics.pdf",
+          showSite: true,
         },
         {
           title: "Retail Analytics at Quantium",
@@ -237,24 +242,33 @@ export default {
         },
         {
           title: "Credit Risk Predictive Model at ID/X Partners",
-          windowId: "",
           imgSrc: "/files/projects/data-analysis/idx.png",
           tags: ["Machine Learning", "Python", "Data Visualization"],
           desc: "Analyze loan data from ID/X Partners, visualize trends, and build a predictive model for loan approval or rejection.",
-          githubLink:
-            "https://github.com/muhammad-zulfikar/idxpartners_finalproject",
+          githubLink: "https://github.com/muhammad-zulfikar/idxpartners_finalproject",
           showGitHub: true,
         },
-        // Add more projects here
       ],
       webdevs: [
         {
           title: "Vue Notes",
           imgSrc: "/files/projects/webdev/vue-notes.png",
           tags: ["Vue", "Firebase"],
-          desc: "Created a Note App as Final Project for the CS50X: Harvard Computer Science Course.",
+          desc: "Note website in Vue 3 as Final Project for the CS50X: Harvard Computer Science Course.",
           githubLink: "https://github.com/muhammad-zulfikar/vue-notes",
           siteLink: "https://vue-verse.web.app",
+          showSite: true,
+          showGitHub: true,
+        },
+        {
+          title: "Blog Website",
+          imgSrc: "/files/projects/webdev/blog.png",
+          tags: ["Next.js", "GitHub Pages"],
+          desc: "Basic blogging website built with Next.js and Typescript.",
+          githubLink: "https://github.com/muhammad-zulfikar/blog",
+          siteLink: "https://muhammad-zulfikar.github.io/blog",
+          showSite: true,
+          showGitHub: true,
         },
         {
           title: "Windows 95 Portfolio (This Website)",
@@ -263,6 +277,8 @@ export default {
           desc: "A Windows 95 themed personal portfolio website. My current portfolio website",
           githubLink: "https://github.com/muhammad-zulfikar/portfolio",
           siteLink: "https://muhammad-zulfikar.web.app",
+          showSite: true,
+          showGitHub: true,
         },
         {
           title: "Landing Page",
@@ -270,8 +286,10 @@ export default {
           tags: ["HTML", "CSS", "Javascript"],
           desc: "A simple landing page with search and sign up/sign in button form",
           githubLink: "https://github.com/muhammad-zulfikar/landing_page",
+          siteLink: "https://muhammad-zulfikar.github.io/landing_page",
+          showSite: true,
+          showGitHub: true,
         },
-        // Add more projects here
       ],
       others: [
         {
@@ -280,19 +298,15 @@ export default {
           imgSrc: "/files/projects/other/charge_control.gif",
           tags: ["Charge", "Shell", "Android", "Terminal"],
           desc: "Effective approach to customize and manage the charging current settings for magisk-rooted Android devices.",
-          githubLink:
-            "https://github.com/muhammad-zulfikar/charge_control_magisk",
+          githubLink: "https://github.com/muhammad-zulfikar/charge_control_magisk",
         },
         {
           title: "Adblock Magisk Module",
-          windowId: "",
           imgSrc: "/files/projects/other/adblock.gif",
           tags: ["Adblock", "Shell", "Android", "Terminal"],
           desc: "Simple and effective adblock module written in Shell for Magisk that blocks ads system-wide on magisk-rooted Android devices.",
-          githubLink:
-            "https://github.com/muhammad-zulfikar/adblock_magisk_module",
+          githubLink: "https://github.com/muhammad-zulfikar/adblock_magisk_module",
         },
-        // Add more projects here
       ],
     };
   },
@@ -324,74 +338,6 @@ export default {
 </script>
 
 <style scoped>
-/* Global */
-.header,
-.content {
-  padding: 20px 0;
-}
-
-/* Header */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 60px;
-  padding-bottom: 20px;
-}
-
-.header-title {
-  text-align: center;
-  font-weight: bold;
-}
-
-.header-subtitle {
-  font-size: 13px;
-  color: gray;
-  text-align: center;
-  padding-top: 10px;
-}
-
-/* Tabs */
-.tabs {
-  display: flex;
-  font-size: 13px;
-  justify-content: left;
-  padding-top: 20px;
-}
-
-.tab {
-  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
-  padding: 7px 5px 5px 5px;
-  margin-right: 0.3px;
-  border-top: solid rgb(250, 250, 250) 3px;
-  border-left: solid rgba(250, 250, 250) 3px;
-  border-right: solid rgb(90, 90, 90) 3px;
-  border-bottom: solid rgb(250, 250, 250) 1px;
-}
-
-.active-tab {
-  font-weight: bold;
-  border-bottom: 5px solid rgb(195, 195, 195);
-  position: relative;
-  z-index: 9999;
-}
-
-.active-tab.first::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  width: 2px;
-  height: calc(100% + 5px);
-  background-color: rgba(250, 250, 250);
-  z-index: 9998;
-}
-
 /* Content */
 .content {
   border-top: solid rgb(250, 250, 250) 3px;
@@ -399,9 +345,10 @@ export default {
   border-bottom: solid rgb(90, 90, 90) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
   padding: 10px;
-  margin-top: -2px;
+  margin-top: -3px;
   position: relative;
   z-index: 1;
+  overflow: overlay;
 }
 
 .title {
@@ -418,12 +365,21 @@ export default {
 
 .img {
   display: flex;
-  width: 80%;
+  width: 320px;
+  height: 180px;
   flex-direction: column;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 4px solid white;
+  background: rgb(189, 190, 189);
+  border-top: solid rgb(250, 250, 250) 4px;
+  border-left: solid rgb(250, 250, 250) 4px;
+  border-bottom: solid rgb(90, 90, 90) 4px;
+  border-right: solid rgb(90, 90, 90) 4px;
 }
 
 iframe {
@@ -441,6 +397,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .tags button {
@@ -515,41 +472,8 @@ iframe {
   background-color: darkgray;
 }
 
-/* Normalize */
-h2,
-h3,
-h4 {
-  padding: 0;
-  margin: 0;
-}
-
 /* Media query */
 @media screen and (max-width: 1024px) {
-  /* Tabs */
-  .tabs {
-    display: flex;
-    font-size: 13px;
-    justify-content: left;
-    padding-top: 20px;
-  }
-
-  .tab {
-    cursor: url("@/assets/cursor/pointer.cur"), auto !important;
-    padding: 7px 5px 5px 5px;
-    margin-right: 0.3px;
-    border-top: solid rgb(250, 250, 250) 2px;
-    border-left: solid rgba(250, 250, 250) 2px;
-    border-right: solid rgb(90, 90, 90) 2px;
-    border-bottom: solid rgb(250, 250, 250) 1px;
-  }
-
-  .active-tab {
-    font-weight: bold;
-    border-bottom: 2px solid rgb(195, 195, 195);
-    position: relative;
-    z-index: 9999;
-  }
-
   /* Content */
   .content {
     border-top: solid rgb(250, 250, 250) 2px;

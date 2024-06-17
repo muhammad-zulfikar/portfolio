@@ -13,41 +13,17 @@
         <component
           :is="window.windowComponent"
           :nameOfWindow="window.windowId"
-          :content_padding_bottom="
-            isMobile
-              ? window.windowContentPadding.mobile?.bottom ??
-                window.windowContentPadding.bottom
-              : window.windowContentPadding.bottom
-          "
-          :content_padding_left="
-            isMobile
-              ? window.windowContentPadding.mobile?.left ??
-                window.windowContentPadding.left
-              : window.windowContentPadding.left
-          "
-          :content_padding_right="
-            isMobile
-              ? window.windowContentPadding.mobile?.right ??
-                window.windowContentPadding.right
-              : window.windowContentPadding.right
-          "
-          :content_padding_top="
-            isMobile
-              ? window.windowContentPadding.mobile?.top ??
-                window.windowContentPadding.top
-              : window.windowContentPadding.top
-          "
+          :content_padding_bottom="windowPadding(window, 'bottom')"
+          :content_padding_left="windowPadding(window, 'left')"
+          :content_padding_right="windowPadding(window, 'right')"
+          :content_padding_top="windowPadding(window, 'top')"
           :id="window.windowId"
-          :style="{
-            position: window.position,
-            left: isMobile ? window.positionXMobile : window.positionX,
-            top: isMobile ? window.positionYMobile : window.positionY,
-          }"
+          :style="windowStyle(window)"
           :folderContent="window.folderContent"
           :folderSize="window.folderSize"
           v-if="windowCheck(window.windowId)"
         >
-          <component :is="window.windowContent" slot="content"> </component>
+          <component :is="window.windowContent" slot="content"></component>
         </component>
       </div>
       <app-grid></app-grid>
@@ -55,13 +31,15 @@
 
     <!-- Start menu & Navbar -->
     <StartMenu
-      v-if="$store.getters.getActiveWindow == 'Menu'"
+      v-if="$store.getters.getActiveWindow === 'Menu'"
       style="position: absolute; z-index: 9999; left: 0; bottom: 30px"
-    >
-    </StartMenu>
-    <navbar style="position: absolute; bottom: 0; z-index: 9999" id="navbar" />
+    ></StartMenu>
+    <navbar
+      style="position: absolute; bottom: 0; z-index: 9999"
+      id="navbar"
+    ></navbar>
 
-    <!-- Popup message -->
+    <!-- Popup messages -->
     <Popup v-if="showDefaultPopup" :message="defaultPopupMessage" />
     <Popup v-if="isMobile && showMobilePopup" :message="mobilePopupMessage" />
     <Popup
@@ -74,15 +52,11 @@
 <script>
 import Notepad from "./components/windows/notepad";
 import Explorer from "./components/windows/explorer";
-
-// Template
 import Navbar from "./components/template/Navbar";
 import AppGrid from "./components/template/AppGrid";
 import Window from "./components/template/Window";
 import StartMenu from "./components/template/StartMenu";
 import Popup from "./components/template/Popup";
-
-// Windows
 import Bio from "./components/views/Bio";
 import Resume from "./components/views/Resume";
 import Projects from "./components/views/Projects";
@@ -92,27 +66,20 @@ import Educations from "./components/views/Educations";
 import Experiences from "./components/views/Experiences";
 import Skills from "./components/views/Skills";
 import Mail from "./components/views/Mail";
-
-// Projects
 import Quantium from "./components/windows/projects/data_analysis/quantium";
 
-// Vue component definition
 export default {
   name: "App",
-  data: function () {
+  data() {
     return {
-      // Windows data
       windows: this.$store.getters.getWindows,
       windowComponents: {},
-      // Popup messages
       defaultPopupMessage: "Click and drag windows to interact",
       mobilePopupMessage:
         "Access the site from a desktop for the best experience",
       mailSentPopupMessage: "Mail has been sent!",
     };
   },
-
-  // Registering components and windows
   components: {
     Notepad,
     Explorer,
@@ -132,9 +99,7 @@ export default {
     Skills,
     Quantium,
   },
-
   computed: {
-    // Computed properties for dynamic styling
     style() {
       return {
         "--fullscreen": this.$store.getters.getFullscreenWindowHeight,
@@ -159,44 +124,32 @@ export default {
       return this.mailSent;
     },
   },
-
   mounted() {
-    // Fixing height problems for mobile devices
-    let navbar = document.getElementById("navbar");
-    let topnavbar = document.getElementById("top-navbar");
-    let topNavbarHeight = topnavbar.clientHeight;
-    let navbarHeight = navbar.clientHeight;
+    this.updateScreenHeight();
 
-    document.getElementById("screen").style.height =
-      window.innerHeight - navbarHeight - topNavbarHeight + "px";
+    window.addEventListener("resize", this.updateScreenHeight);
+    window.addEventListener("resize", this.resetHeight);
 
-    // Adding event listeners for responsive design
-    window.addEventListener("resize", () => {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    });
-
-    function resetHeight() {
-      document.body.style.height = window.innerHeight + "px";
-      document.documentElement.style.height = window.innerHeight + "px";
-    }
-
-    window.addEventListener("resize", resetHeight);
-    this.$store.commit(
-      "setFullscreenWindowHeight",
-      window.innerHeight - navbarHeight - topNavbarHeight + "px"
-    );
-
-    // Set all windows to fullscreen in mobile and open biography window on desktop
     if (this.isMobile) {
       this.$store.dispatch("setAllWindowsFullscreen", true);
     } else {
       this.openWindow("biographyWindow");
     }
   },
-
   methods: {
-    // Opening a window
+    windowPadding(window, side) {
+      return this.isMobile
+        ? window.windowContentPadding.mobile?.[side] ??
+            window.windowContentPadding[side]
+        : window.windowContentPadding[side];
+    },
+    windowStyle(window) {
+      return {
+        position: window.position,
+        left: this.isMobile ? window.positionXMobile : window.positionX,
+        top: this.isMobile ? window.positionYMobile : window.positionY,
+      };
+    },
     openWindow(windowId) {
       const payload = {
         windowState: "open",
@@ -204,42 +157,46 @@ export default {
       };
       this.$store.commit("setWindowState", payload);
     },
-
-    // Checking if a window is open
     windowCheck(windowId) {
-      if (this.$store.getters.getWindowById(windowId).windowState == "open") {
-        return true;
-      }
+      return this.$store.getters.getWindowById(windowId).windowState === "open";
     },
-
-    // Deinitializing windows
     deinitWindows() {
-      if (this.$store.getters.getActiveWindow == "Menu") {
-        console.log("deinitWindows");
+      if (this.$store.getters.getActiveWindow === "Menu") {
         this.$store.commit("setActiveWindow", "");
         setTimeout(() => {
           this.$store.commit("zIndexIncrement", "");
         }, 0);
       }
     },
+    updateScreenHeight() {
+      const navbar = document.getElementById("navbar");
+      const topnavbar = document.getElementById("top-navbar");
+      const topNavbarHeight = topnavbar.clientHeight;
+      const navbarHeight = navbar.clientHeight;
+
+      document.getElementById("screen").style.height =
+        window.innerHeight - navbarHeight - topNavbarHeight + "px";
+    },
+    resetHeight() {
+      document.body.style.height = window.innerHeight + "px";
+      document.documentElement.style.height = window.innerHeight + "px";
+    },
   },
 };
 </script>
 
 <style>
-/* CSS Imports */
 @import "./assets/css/utils/normalize.css";
 @import "./assets/css/windows/app.css";
 @import "./assets/css/windows/window.css";
 @import "./assets/css/windows/appgrid.css";
+@import "./assets/css/windows/tabs.css";
 
-/* Font Face */
 @font-face {
   font-family: "MS Sans Serif";
   src: url("~@/assets/fonts/MS-Sans-Serif.ttf");
 }
 
-/* Utilities */
 html {
   overflow: hidden;
 }
@@ -261,7 +218,6 @@ html {
   z-index: 999;
 }
 
-/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 15px;
   background: repeating-conic-gradient(
@@ -291,7 +247,6 @@ html {
   }
 }
 
-/* Fullscreen Styling */
 .fullscreen {
   left: 0 !important;
   position: relative;

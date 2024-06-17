@@ -281,7 +281,7 @@ export default {
 
 .desc {
   padding: 10px 20px 0 20px;
-  text-align: justify;
+  text-align: left;
   font-size: 15px;
   line-height: 1.3;
 }
@@ -312,11 +312,12 @@ export default {
 .button button img {
   height: 22px;
   padding-bottom: 2px;
+  padding-top: 2px;
   cursor: url("@/assets/cursor/pointer.cur"), auto !important;
 }
 
 .button label {
-  padding-top: 2px;
+  padding-top: 3px;
   padding-left: 5px;
   font-size: 13px;
   cursor: url("@/assets/cursor/pointer.cur"), auto !important;

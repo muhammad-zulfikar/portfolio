@@ -12,16 +12,12 @@
     <hr />
 
     <div class="tabs">
-      <div
-        class="tab"
-        :class="{ 'active-tab first': activeTab === '2024' }"
-        @click="setActiveTab('2024')"
-      >
+      <!-- <div class="tab" :class="{ 'active-tab first': activeTab === '2024' }" @click="setActiveTab('2024')">
         2024
-      </div>
+      </div> -->
       <div
         class="tab"
-        :class="{ 'active-tab': activeTab === '2023' }"
+        :class="{ 'active-tab first': activeTab === '2023' }"
         @click="setActiveTab('2023')"
       >
         2023
@@ -77,35 +73,35 @@ export default {
       headerTitle: "Publications",
       headerSubtitle:
         "A complete collection of my academic works, including papers, articles, journals, and publications. Mostly IR-related stuff",
-      activeTab: "2024",
+      activeTab: "2023",
       publications: [
-        {
-          title:
-            "Meninjau Kembali Komitmen Indonesia dalam Paris Agreement 2015 Era Jokowi (Energi Baru Terbarukan)",
-          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Meninjau%20Kembali%20Komitmen%20Indonesia%20dalam%20Paris%20Agreement%202015%20Era%20Jokowi%20(Energi%20Baru%20Terbarukan)%20.pdf",
-          tags: [
-            "Environmental Issues",
-            "Renewable Energy",
-            "Paris Agreement",
-            "Joko Widodo",
-          ],
-          year: "2024",
-          abstract:
-            "Isu lingkungan dan perubahan iklim akibat emisi gas rumah kaca dari pembakaran bahan bakar fosil telah menjadi tantangan global yang mengharuskan pencarian solusi berkelanjutan. Penggunaan energi tidak terbarukan seperti minyak bumi, gas alam, dan batubara sebagai praktek utama di seluruh dunia telah mengakibatkan dampak negatif signifikan terhadap lingkungan seperti pencemaran, degradasi lingkungan, dan kerusakan habitat. Oleh karena itu, transisi ke Energi Baru Terbarukan (EBT) yang memanfaatkan sumber daya terbarukan seperti matahari, angin, air, dan biomassa menjadi solusi penting yang lebih ramah lingkungan dan berkelanjutan. Indonesia, sebagai negara dengan emisi gas rumah kaca cukup besar, memiliki tanggung jawab untuk berkontribusi dalam upaya mitigasi perubahan iklim sesuai kesepakatan Paris Agreement 2015.",
-        },
-        {
-          title:
-            "Pengaruh Kebijakan Ekspor Nikel Indonesia Terhadap Gugatan Uni Eropa di WTO dan Implikasinya Terhadap Perdagangan Internasional",
-          link: "https://muhammad-zulfikar.github.io/files/documents/publications/Pengaruh%20Kebijakan%20Ekspor%20Nikel%20Indonesia%20Terhadap%20Gugatan%20Uni%20Eropa%20di%20WTO%20dan%20Implikasinya%20Terhadap%20Perdagangan%20Internasional.pdf.pdf",
-          tags: [
-            "Indonesia's Foreign Policy",
-            "World Trade Organization",
-            "European Union",
-          ],
-          year: "2024",
-          abstract:
-            "Nikel menjadi komoditas penting dalam perdagangan internasional, terutama dalam industri baja tahan karat dan baterai ion lithium. Kebijakan larangan ekspor nikel mentah Indonesia memicu reaksi keras dari Uni Eropa yang mengajukan gugatan ke Organisasi Perdagangan Dunia (WTO). Kasus ini mencerminkan pertentangan antara kepentingan nasional Indonesia dalam meningkatkan nilai tambah industri dalam negeri dan kewajiban mematuhi aturan perdagangan internasional.",
-        },
+        // {
+        //   title:
+        //     "Meninjau Kembali Komitmen Indonesia dalam Paris Agreement 2015 Era Jokowi (Energi Baru Terbarukan)",
+        //   link: "https://muhammad-zulfikar.github.io/files/documents/publications/Meninjau%20Kembali%20Komitmen%20Indonesia%20dalam%20Paris%20Agreement%202015%20Era%20Jokowi%20(Energi%20Baru%20Terbarukan)%20.pdf",
+        //   tags: [
+        //     "Environmental Issues",
+        //     "Renewable Energy",
+        //     "Paris Agreement",
+        //     "Joko Widodo",
+        //   ],
+        //   year: "2024",
+        //   abstract:
+        //     "Isu lingkungan dan perubahan iklim akibat emisi gas rumah kaca dari pembakaran bahan bakar fosil telah menjadi tantangan global yang mengharuskan pencarian solusi berkelanjutan. Penggunaan energi tidak terbarukan seperti minyak bumi, gas alam, dan batubara sebagai praktek utama di seluruh dunia telah mengakibatkan dampak negatif signifikan terhadap lingkungan seperti pencemaran, degradasi lingkungan, dan kerusakan habitat. Oleh karena itu, transisi ke Energi Baru Terbarukan (EBT) yang memanfaatkan sumber daya terbarukan seperti matahari, angin, air, dan biomassa menjadi solusi penting yang lebih ramah lingkungan dan berkelanjutan. Indonesia, sebagai negara dengan emisi gas rumah kaca cukup besar, memiliki tanggung jawab untuk berkontribusi dalam upaya mitigasi perubahan iklim sesuai kesepakatan Paris Agreement 2015.",
+        // },
+        // {
+        //   title:
+        //     "Pengaruh Kebijakan Ekspor Nikel Indonesia Terhadap Gugatan Uni Eropa di WTO dan Implikasinya Terhadap Perdagangan Internasional",
+        //   link: "https://muhammad-zulfikar.github.io/files/documents/publications/Pengaruh%20Kebijakan%20Ekspor%20Nikel%20Indonesia%20Terhadap%20Gugatan%20Uni%20Eropa%20di%20WTO%20dan%20Implikasinya%20Terhadap%20Perdagangan%20Internasional.pdf.pdf",
+        //   tags: [
+        //     "Indonesia's Foreign Policy",
+        //     "World Trade Organization",
+        //     "European Union",
+        //   ],
+        //   year: "2024",
+        //   abstract:
+        //     "Nikel menjadi komoditas penting dalam perdagangan internasional, terutama dalam industri baja tahan karat dan baterai ion lithium. Kebijakan larangan ekspor nikel mentah Indonesia memicu reaksi keras dari Uni Eropa yang mengajukan gugatan ke Organisasi Perdagangan Dunia (WTO). Kasus ini mencerminkan pertentangan antara kepentingan nasional Indonesia dalam meningkatkan nilai tambah industri dalam negeri dan kewajiban mematuhi aturan perdagangan internasional.",
+        // },
         {
           title:
             "Revolution in Military Affairs: Kebangkitan dan Revolusi China dalam Militer dan Ekonomi yang mengancam Amerika Serikat",
@@ -249,74 +245,6 @@ export default {
 </script>
 
 <style scoped>
-/* Global */
-.header,
-.content {
-  padding: 20px 0;
-}
-
-/* Header */
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header-img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 60px;
-  padding-bottom: 20px;
-}
-
-.header-title {
-  text-align: center;
-  font-weight: bold;
-}
-
-.header-subtitle {
-  font-size: 13px;
-  color: gray;
-  text-align: center;
-  padding-top: 10px;
-}
-
-/* Tabs */
-.tabs {
-  display: flex;
-  font-size: 13px;
-  justify-content: left;
-  padding-top: 20px;
-}
-
-.tab {
-  cursor: url("@/assets/cursor/pointer.cur"), auto !important;
-  padding: 7px 5px 5px 5px;
-  margin-right: 0.3px;
-  border-top: solid rgb(250, 250, 250) 3px;
-  border-left: solid rgba(250, 250, 250) 3px;
-  border-right: solid rgb(90, 90, 90) 3px;
-  border-bottom: solid rgb(250, 250, 250) 1px;
-}
-
-.active-tab {
-  font-weight: bold;
-  border-bottom: 5px solid rgb(195, 195, 195);
-  position: relative;
-  z-index: 9999;
-}
-
-.active-tab.first::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  width: 2px;
-  height: calc(100% + 5px);
-  background-color: rgba(250, 250, 250);
-  z-index: 9998;
-}
-
 /* Content */
 .content {
   border-top: solid rgb(250, 250, 250) 3px;
@@ -324,7 +252,7 @@ export default {
   border-bottom: solid rgb(90, 90, 90) 3px;
   border-right: solid rgb(90, 90, 90) 3px;
   padding-inline: 20px;
-  margin-top: -2px;
+  margin-top: -3px;
   position: relative;
   z-index: 1;
 }
@@ -419,47 +347,15 @@ export default {
   background-color: darkgray;
 }
 
-/* Normalize */
-h2,
-h3,
-h4 {
-  padding: 0;
-  margin: 0;
-}
-
 /* Media query */
 @media screen and (max-width: 1024px) {
-  /* Tabs */
-  .tabs {
-    display: flex;
-    font-size: 13px;
-    justify-content: left;
-    padding-top: 20px;
-  }
-
-  .tab {
-    cursor: url("@/assets/cursor/pointer.cur"), auto !important;
-    padding: 7px 5px 5px 5px;
-    margin-right: 0.3px;
-    border-top: solid rgb(250, 250, 250) 2px;
-    border-left: solid rgba(250, 250, 250) 2px;
-    border-right: solid rgb(90, 90, 90) 2px;
-    border-bottom: solid rgb(250, 250, 250) 1px;
-  }
-
-  .active-tab {
-    font-weight: bold;
-    border-bottom: 2px solid rgb(195, 195, 195);
-    position: relative;
-    z-index: 9999;
-  }
-
   /* Content */
   .content {
     border-top: solid rgb(250, 250, 250) 2px;
     border-left: solid rgb(250, 250, 250) 2px;
     border-bottom: solid rgb(90, 90, 90) 2px;
     border-right: solid rgb(90, 90, 90) 2px;
+    padding: 10px;
     margin-top: -2px;
     position: relative;
     z-index: 1;
